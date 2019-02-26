@@ -18,3 +18,4 @@ yarn-error.log*
 # Temp
 client-old
 server-old
+server/package-lock.json
