@@ -2,14 +2,7 @@
 // Definition of variables
 $primary: #32c3ff;
 
-
-// ----------------------------------------
-// To install Boostrap:
-// 1) Run in the client folder: $ npm i bootstrap
-// 2) Import bootstrap with the following line
-// @import 'bootstrap/scss/bootstrap';
-// ----------------------------------------
-
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 // --------------------
 // Style reusable for all components
@@ -37,11 +30,6 @@ body {
 .App {
   text-align: center;
 
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-  }
-
   .App-header {
     background-color: $primary;
     padding: 20px;
@@ -62,19 +50,6 @@ body {
     font-size: 1.5em;
   }
 
-  .App-intro {
-    font-size: large;
-  }
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
 }
 
 // --------------------
@@ -82,14 +57,5 @@ body {
 .Home {
   p {
     font-size: 1.2em;
-  }
-}
-
-// --------------------
-// Style for Secret component
-.Secret {
-  .result {
-    font-size: 1.2em;
-    color: $primary;
   }
 }
