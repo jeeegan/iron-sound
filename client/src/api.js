@@ -52,29 +52,6 @@ export default {
       .get('/logout')
   },
 
-  getCountries() {
-    return service
-      .get('/countries')
-      .then(res => res.data)
-      .catch(errHandler)
-  },
-
-  postCountries(data) {
-    return service
-      .post('/countries', data)
-      .then(res => res.data)
-      .catch(errHandler)
-  },
-
-  getSecret() {
-    return service
-      .get('/secret')
-      .then(res => res.data)
-      .catch(errHandler)
-  },
-
-
-
   addPicture(file) {
     const formData = new FormData()
     formData.append("picture", file)
