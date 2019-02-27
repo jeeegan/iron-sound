@@ -30,7 +30,7 @@ class Signup extends Component {
     e.preventDefault()
     let data = {
       username: this.state.username,
-      display_name: this.state.name,
+      display_name: this.state.display_name,
       password: this.state.password,
       email: this.state.email,
       bc_url: this.state.bc_url,
