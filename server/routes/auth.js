@@ -33,6 +33,15 @@ router.post("/signup", (req, res, next) => {
     .catch(err => next(err))
 })
 
+router.get('/loggedin', (req, res, next) => {
+  if(req.user) {
+    res.status(200).json(req.user)
+    return;
+  }
+  res.status(403)
+  return;
+});
+
 router.post("/login", (req, res, next) => {
   const { username, password } = req.body
 

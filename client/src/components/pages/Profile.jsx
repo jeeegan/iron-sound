@@ -6,11 +6,14 @@ class Profile extends Component {
     user: null,
   }
 
-  // getUser() {
-  //   api.showProfile()
-  // }
+  componentDidMount() {
+    api.userData()
+    .then(res => console.log(res))
+    .catch(console.log)
+  }
   
-  render() {                
+  render() {     
+    console.log(this.props.match.params.id);           
     return (
       <div className="Profile">
         <h2>Profile</h2>

@@ -60,10 +60,13 @@ export default {
       .catch(errHandler)
   },
 
-  showProfile() {
+  userData() {
     return service
-      .get('/profile/:id')
-      .then (res => res.data)
+      .get('/loggedin')
+      .then(res => {
+        let user = res.data
+        return user
+      })
       .catch(errHandler)
   },
 
