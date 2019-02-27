@@ -30,8 +30,17 @@ class Signup extends Component {
     e.preventDefault()
     let data = {
       username: this.state.username,
-      name: this.state.name,
+      display_name: this.state.name,
       password: this.state.password,
+      email: this.state.email,
+      bc_url: this.state.bc_url,
+      sc_url: this.state.sc_url,
+      yt_url: this.state.yt_url,
+      custom_url: this.state.custom_url,
+      bio: this.state.bio,
+      location: this.state.location,
+      user_img: this.state.user_img,
+      message: null
     }
     api.signup(data)
       .then(result => {
