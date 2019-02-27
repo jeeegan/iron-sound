@@ -12,7 +12,7 @@ const uploadSchema = new Schema({
   },
   album: String,
   year: { 
-    type: String, 
+    type: Number, 
     required: true 
   },
   genre: { 
