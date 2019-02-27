@@ -23,7 +23,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">IronSound</h1>
           <NavLink to="/" exact>Home</NavLink>
           {api.isLoggedIn() && <NavLink to="/upload">Upload</NavLink>}
           {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}

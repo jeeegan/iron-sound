@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import api from '../../api';
 
 class Profile extends Component {
-  state = {
-    user: null,
-  }
+  state = {}
 
   componentDidMount() {
     api.userData()
-    .then(res => console.log(res))
+    .then(res => {
+      console.log(res)
+      this.setState(res)
+      console.log(this.state.user)
+    })
     .catch(console.log)
+  
   }
   
   render() {     
@@ -17,6 +20,7 @@ class Profile extends Component {
     return (
       <div className="Profile">
         <h2>Profile</h2>
+        {this.state.display_name}
       </div>
     );
   }
