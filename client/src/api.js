@@ -52,6 +52,13 @@ export default {
       .get('/logout')
   },
 
+  upload(data) {
+    return service
+      .post('/upload', { data })
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
   addPicture(file) {
     const formData = new FormData()
     formData.append("picture", file)

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import api from '../../api';
 
 class Upload extends Component {
   constructor(props) {
@@ -21,6 +22,29 @@ class Upload extends Component {
     this.setState({
       [stateFieldName]: event.target.value
     })
+  }
+
+  handleClick(e) {
+    e.preventDefault()
+    let data = {
+      title: this.state.title,
+      artist: this.state.artist,
+      album: this.state.album,
+      year: this.state.year,
+      genre: this.state.genre,
+      tags: this.state.tags,
+      embed_url: this.state.embed_url,
+      host: this.state.host,
+      upload_img: this.state.upload_img,
+      upload_type: this.state.upload_type,
+      message: null
+    }
+    api.upload(data)
+      .then(result => {
+        console.log('SUCCESS!')
+        this.props.history.push("/") // Redirect to the home page
+      })
+      .catch(err => this.setState({ message: err.toString() }))
   }
 
   render() {
