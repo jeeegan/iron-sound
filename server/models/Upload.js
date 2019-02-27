@@ -29,8 +29,10 @@ const uploadSchema = new Schema({
     type: String,
     required: true,
     enum: ['bc', 'sc', 'yt'],
-    _created_by: Schema.Types.ObjectId,
-    ref: 'User',
+  },
+  _created_by: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   },
   upload_img: String,
   upload_type: {
