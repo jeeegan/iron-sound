@@ -8,16 +8,16 @@ const bcrypt = require("bcrypt")
 const bcryptSalt = 10
 
 router.post("/signup", (req, res, next) => {
-  const { username, password, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, user_img, location } = req.body
-  User.findOne({ username })
+  const { password, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, user_img, location } = req.body
+  User.findOne({ email })
     .then(userDoc => {
       if (userDoc !== null) {
-        res.status(409).json({ message: "The username already exists" })
+        res.status(409).json({ message: "The email already exists" })
         return
       }
       const salt = bcrypt.genSaltSync(bcryptSalt)
       const hashPass = bcrypt.hashSync(password, salt)
-      const newUser = new User({ username, password: hashPass, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, user_img, location })
+      const newUser = new User({ password: hashPass, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, user_img, location })
       return newUser.save()
     })
     .then(userSaved => {
@@ -43,15 +43,15 @@ router.get('/loggedin', (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  const { username, password } = req.body
+  const { email, password } = req.body
 
-  // first check to see if there's a document with that username
-  User.findOne({ username })
+  // first check to see if there's a document with that email
+  User.findOne({ email })
     .then(userDoc => {
-      // "userDoc" will be empty if the username is wrong (no document in database)
+      // "userDoc" will be empty if the email is wrong (no document in database)
       if (!userDoc) {
         // create an error object to send to our error handler with "next()"
-        next(new Error("Incorrect username "))
+        next(new Error("Incorrect email "))
         return
       }
 

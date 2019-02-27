@@ -5,7 +5,6 @@ class Signup extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: "",
       display_name: "",
       password: "",
       email: "",
@@ -29,7 +28,6 @@ class Signup extends Component {
   handleClick(e) {
     e.preventDefault()
     let data = {
-      username: this.state.username,
       display_name: this.state.display_name,
       password: this.state.password,
       email: this.state.email,
@@ -55,7 +53,6 @@ class Signup extends Component {
       <div className="Signup">
         <h2>Signup</h2>
         <form>
-          Username: <input type="text" value={this.state.username} onChange={(e) => this.handleInputChange("username", e)} /> <br />
           Display Name: <input type="text" value={this.state.display_name} onChange={(e) => this.handleInputChange("display_name", e)} /> <br />
           Password: <input type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> <br />
           Email: <input type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> <br />
