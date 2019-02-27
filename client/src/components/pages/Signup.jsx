@@ -6,8 +6,16 @@ class Signup extends Component {
     super(props)
     this.state = {
       username: "",
-      name: "",
+      display_name: "",
       password: "",
+      email: "",
+      bc_url: "",
+      sc_url: "",
+      yt_url: "",
+      custom_url: "",
+      bio: "",
+      location: "",
+      user_img: "",
       message: null
     }
   }
