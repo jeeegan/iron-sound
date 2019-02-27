@@ -60,6 +60,13 @@ export default {
       .catch(errHandler)
   },
 
+  showProfile() {
+    return service
+      .get('/profile/:id')
+      .then (res => res.data)
+      .catch(errHandler)
+  },
+
   addPicture(file) {
     const formData = new FormData()
     formData.append("picture", file)
