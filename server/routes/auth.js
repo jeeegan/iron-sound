@@ -9,10 +9,6 @@ const bcryptSalt = 10
 
 router.post("/signup", (req, res, next) => {
   const { username, password, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, user_img, location } = req.body
-  if (!username || !password) {
-    res.status(400).json({ message: "Indicate username and password" })
-    return
-  }
   User.findOne({ username })
     .then(userDoc => {
       if (userDoc !== null) {
