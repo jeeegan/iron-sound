@@ -67,7 +67,7 @@ class Upload extends Component {
             <option value="track">Track</option>
             <option value="album">Album</option>
           </select>
-          <button onClick={(e) => this.handleClick(e)}>Signup</button>
+          <button onClick={(e) => this.handleClick(e)}>Upload</button>
         </form>
       </div>
     )

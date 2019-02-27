@@ -54,7 +54,8 @@ export default {
 
   upload(data) {
     return service
-      .post('/upload', { data })
+      .post('/upload', 
+      data)
       .then(res => res.data)
       .catch(errHandler)
   },

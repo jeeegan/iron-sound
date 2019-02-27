@@ -11,13 +11,18 @@ router.get('/secret', isLoggedIn, (req, res, next) => {
 });
 
 router.post("/upload", (req, res, next) => {
-  const { title, artist, album, genre, tags, embed_url, host, upload_img, upload_type } = req.body
+  const { title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type } = req.body
 
-  const newUpload = new Upload({ title, artist, album,    genre, tags, embed_url, host, upload_img, upload_type })
+
+  const newUpload = new Upload({ title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type, _created_by: req.user._id })
+  console.log(newUpload)
 
   newUpload.save()
-  .then(() => {
-    res.redirect('/')
+  .then((data) => {
+    res.json(data);
+  })
+  .catch(error => {
+    console.log(error)
   })
 })
 
