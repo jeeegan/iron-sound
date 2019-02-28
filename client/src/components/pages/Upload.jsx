@@ -33,23 +33,24 @@ class Upload extends Component {
 
   handleClick(e) {
     e.preventDefault()
-    let formData = new FormData()
-    formData.append("title", this.state.title)
-    formData.append("artist", this.state.artist)
-    formData.append("album", this.state.album)
-    formData.append("year", this.state.year)
-    formData.append("genre", this.state.genre)
-    formData.append("tags", this.state.tags)
-    formData.append("embed_url", this.state.embed_url)
-    formData.append("host", this.state.host)
-    formData.append("upload_img", this.state.upload_img)
-    formData.append("upload_type", this.state.upload_type)
+    let formData = new FormData();
+    formData.append("title", this.state.title);
+    formData.append("artist", this.state.artist);
+    formData.append("album", this.state.album);
+    formData.append("year", this.state.year);
+    formData.append("genre", this.state.genre);
+    formData.append("tags", this.state.tags);
+    formData.append("embed_url", this.state.embed_url);
+    formData.append("host", this.state.host);
+    formData.append("upload_img", this.state.upload_img);
+    formData.append("upload_type", this.state.upload_type);
     api.upload(formData)
       .then(result => {
         console.log('SUCCESS!')
         this.props.history.push("/") // Redirect to the home page
       })
-      .catch(err => this.setState({ message: err.toString() }))
+      .catch(err => this.setState({ message: err.toString() })
+    );
   }
 
   render() {

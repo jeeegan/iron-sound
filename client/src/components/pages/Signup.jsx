@@ -14,7 +14,7 @@ class Signup extends Component {
       custom_url: "",
       bio: "",
       location: "",
-      user_img: "",
+      user_img: null,
       message: null
     }
   }
@@ -25,22 +25,26 @@ class Signup extends Component {
     })
   }
 
+  handleFileUpload = e => {
+    this.setState({
+      user_img: e.target.files[0]
+    })
+  }
+
   handleClick(e) {
     e.preventDefault()
-    let data = {
-      display_name: this.state.display_name,
-      password: this.state.password,
-      email: this.state.email,
-      bc_url: this.state.bc_url,
-      sc_url: this.state.sc_url,
-      yt_url: this.state.yt_url,
-      custom_url: this.state.custom_url,
-      bio: this.state.bio,
-      location: this.state.location,
-      user_img: this.state.user_img,
-      message: null
-    }
-    api.signup(data)
+    let formData = new FormData();
+    formData.append("display_name", this.state.display_name);
+    formData.append("password", this.state.password);
+    formData.append("email", this.state.email);
+    formData.append("bc_url", this.state.bc_url);
+    formData.append("sc_url", this.state.sc_url);
+    formData.append("yt_url", this.state.yt_url);
+    formData.append("custom_url", this.state.custom_url);
+    formData.append("bio", this.state.bio);
+    formData.append("location", this.state.location);
+    formData.append("user_img", this.state.user_img);
+    api.signup(formData)
       .then(result => {
         console.log('SUCCESS!')
         this.props.history.push("/") // Redirect to the home page
@@ -62,7 +66,7 @@ class Signup extends Component {
           Personal Website URL: <input type="text" value={this.state.custom_url} onChange={(e) => this.handleInputChange("custom_url", e)} /> <br />
           Bio: <input type="text" value={this.state.bio} onChange={(e) => this.handleInputChange("bio", e)} /> <br />
           Location: <input type="text" value={this.state.location} onChange={(e) => this.handleInputChange("location", e)} /> <br />
-          Profile Picture: <input type="text" value={this.state.user_img} onChange={(e) => this.handleInputChange("user_img", e)} /> <br />
+          Profile Picture: <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
           <button onClick={(e) => this.handleClick(e)}>Signup</button>
         </form>
         {this.state.message && <div className="info info-danger">

@@ -21,9 +21,9 @@ export default {
     return localStorage.getItem('user') != null
   },
 
-  signup(userInfo) {
+  signup(formData) {
     return service
-      .post('/signup', userInfo)
+      .post('/signup', formData)
       .then(res => {
         // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
         localStorage.setItem('user', JSON.stringify(res.data))
