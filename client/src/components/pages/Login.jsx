@@ -29,7 +29,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="Login pageContent">
         <h2>Login</h2>
         <form>
           Email: <input type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> <br />

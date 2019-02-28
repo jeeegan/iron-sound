@@ -50,7 +50,7 @@ class Upload extends Component {
 
   render() {
     return(
-      <div>
+      <div className="pageContent">
         <Container>
           <Row>
           <Col xs="10">

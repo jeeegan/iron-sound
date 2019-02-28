@@ -50,7 +50,7 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="Signup">
+      <div className="Signup pageContent">
         <h2>Signup</h2>
         <form>
           Display Name: <input type="text" value={this.state.display_name} onChange={(e) => this.handleInputChange("display_name", e)} /> <br />

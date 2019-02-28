@@ -19,7 +19,7 @@ class Home extends Component {
 
   render() {                
     return (
-      <div className="Home">
+      <div className="Home pageContent">
         <h2>Welcome, {this.state.display_name}!</h2>
         <div>
           <h3>Uploads:</h3>

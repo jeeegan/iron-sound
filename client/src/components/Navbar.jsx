@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="navbar">
         <div className="nav-left">
           <NavLink to="/" exact>Home</NavLink>
-          {api.isLoggedIn() && <NavLink to="/upload">Upload</NavLink>}
+          {api.isLoggedIn() && <NavLink to="/upload">Add Content</NavLink>}
           {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
         </div>
         <div className="nav-right">
