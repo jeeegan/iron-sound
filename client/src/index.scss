@@ -29,18 +29,29 @@ body {
 // Style for App component
 .App {
   .App-header {
-    background-color: $primary;
-    padding: 20px;
-    color: white;
+    padding: 20px 0;
+    color: black;
 
     a {
-      color: white;
-      padding: 0 5px;
+      color: black;
+      padding: 0 2vw;
       text-decoration: unset;
+      
     }
 
     a.active {
       font-weight: bold;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2vw;
+    }
+    .nav-left {
+      text-align: left;
+    }
+    .nav-right {
+      text-align: right;
     }
   }
 
