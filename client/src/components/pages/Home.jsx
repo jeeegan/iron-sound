@@ -23,8 +23,11 @@ class Home extends Component {
         <h2>Welcome, {this.state.display_name}!</h2>
         <div>
           <h3>Uploads:</h3>
-          {this.state.uploads && this.state.uploads.map( upload => <p key={upload._id}>{upload.title}</p>)}
-          <iframe width="100%" height="450" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/282989974&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+          <ul className="upload-list">
+          {this.state.uploads && this.state.uploads.map( upload => {
+            return <li><iframe style={{width: "50%", height: "150px"}} key={upload._id} src={upload.embed_url}></iframe></li>
+          })}
+          </ul>
         </div>
       </div>
     );
