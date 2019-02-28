@@ -39,7 +39,7 @@ class Profile extends Component {
           </div>
           {/* USER IMAGE */}
           <div className="user-img">
-            <img style={{width: '24vw', height: 'auto', borderRadius: '50%'}}src="/avatar-test.jpg" alt=""/>
+            <img style={{width: '24vw', height: 'auto', borderRadius: '50%'}}src={this.state.user_img} alt=""/>
           </div>
         </div>
       </div>
