@@ -7,16 +7,13 @@ class Profile extends Component {
   componentDidMount() {
     api.userData()
     .then(res => {
-      console.log(res)
       this.setState(res)
-      console.log(this.state.user)
     })
     .catch(console.log)
   
   }
   
   render() {     
-    console.log(this.props.match.params.id);           
     return (
       <div className="Profile">
         <h2>Profile</h2>
