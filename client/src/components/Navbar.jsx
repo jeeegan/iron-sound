@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../api';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return(
@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="nav-right">
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
-          {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
+          {api.isLoggedIn() && <NavLink to="/" onClick={(e) => api.logout()}>Logout</NavLink>}
         </div>
       </div>
     )

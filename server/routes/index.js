@@ -6,10 +6,7 @@ const User = require("../models/User")
 
 router.post("/upload", (req, res, next) => {
   const { title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type } = req.body
-
-
   const newUpload = new Upload({ title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type, _created_by: req.user._id })
-  console.log(newUpload)
 
   newUpload.save()
   .then((data) => {
@@ -29,5 +26,15 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
     console.log(error)
   })
 }) 
+
+router.get("/", (req, res, next) => {
+  Upload.find()
+    .then((data) => {
+      res.json(data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  })
 
 module.exports = router;

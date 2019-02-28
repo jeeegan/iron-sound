@@ -47,6 +47,7 @@ export default {
   },
 
   logout() {
+    console.log("api.js logout")
     localStorage.removeItem('user')
     return service
       .get('/logout')
@@ -64,8 +65,16 @@ export default {
     return service
       .get('/loggedin')
       .then(res => {
-        let user = res.data
-        return user
+        return res.data
+      })
+      .catch(errHandler)
+  },
+
+  getUploadData() {
+    return service
+      .get('/')
+      .then(res => {
+        return res.data
       })
       .catch(errHandler)
   },

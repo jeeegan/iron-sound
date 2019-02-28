@@ -16,10 +16,6 @@ class App extends Component {
     }
   }
 
-  handleLogoutClick(e) {
-    api.logout()
-  }
-
   render() {
     return (
       <div className="App">
