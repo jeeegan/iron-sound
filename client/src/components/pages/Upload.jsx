@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
-import { Form, FormGroup, Container, Label, Input, Button, Col } from 'reactstrap';
+import { Form, FormGroup, Container, Label, Input, Button, Col, Row } from 'reactstrap';
 
 class Upload extends Component {
   constructor(props) {
@@ -52,9 +52,7 @@ class Upload extends Component {
     return(
       <div>
         <Container>
-          <Col xs="6">
-            <div>Professionally fuck off</div>
-          </Col>
+          <Row>
           <Col xs="6">
             <Form>
               <FormGroup>
@@ -82,7 +80,7 @@ class Upload extends Component {
                 <Input type="text" value={this.state.embed_url} onChange={(e) => this.handleInputChange("embed_url", e)} />
               </FormGroup>
               <FormGroup>
-                <Label>Title </Label>
+                <Label>Host </Label>
                 <select type="select" value={this.state.host} onChange={(e) => this.handleInputChange("host", e)}>
                   <option value="bc">Bandcamp</option>
                   <option value="sc">Soundcloud</option>
@@ -90,11 +88,11 @@ class Upload extends Component {
                 </select>
               </FormGroup>
               <FormGroup>
-                <Label>Title </Label>
+                <Label>Image </Label>
                 <Input type="text" value={this.state.upload_img} onChange={(e) => this.handleInputChange("upload_img", e)} />
               </FormGroup>
               <FormGroup>
-                <Label>Type </Label>
+                <Label>Upload Type </Label>
                 <select type="select" value={this.state.upload_type} onChange={(e) => this.handleInputChange("upload_type", e)}>
                   <option value="track">Track</option>
                   <option value="album">Album</option>
@@ -103,6 +101,7 @@ class Upload extends Component {
               <Button onClick={(e) => this.handleClick(e)}>Upload</Button>
             </Form>
           </Col>
+          </Row>
         </Container>
       </div>
     )
