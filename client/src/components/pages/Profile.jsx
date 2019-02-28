@@ -20,7 +20,13 @@ class Profile extends Component {
     return (
       <div className="Profile">
         <h2>Profile</h2>
-        {this.state.display_name}
+        {this.state.display_name} <br/>
+        {this.state.user_img} <br/>
+        {this.state.location} <br/>
+        {this.state.bio} <br/>
+        {this.state.bc_url} <br/>
+        {this.state.sc_url} <br/>
+        {this.state.yt_url} <br/>
       </div>
     );
   }

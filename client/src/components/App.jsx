@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Link, NavLink, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Upload from './pages/Upload';
 import Profile from './pages/Profile';
 import api from '../api';
+import Navbar from './Navbar';
 
 class App extends Component {
   constructor(props) {
@@ -23,12 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <NavLink to="/" exact>Home</NavLink>
-          {api.isLoggedIn() && <NavLink to="/upload">Upload</NavLink>}
-          {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
-          {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
-          {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
-          {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
+          <Navbar/>
         </header>
         <Switch>
           <Route path="/" exact component={Home} />

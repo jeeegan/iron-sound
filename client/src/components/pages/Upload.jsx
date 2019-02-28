@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
+import { Form, FormGroup, Container, Label, Input, Button, Col } from 'reactstrap';
 
 class Upload extends Component {
   constructor(props) {
@@ -50,25 +51,59 @@ class Upload extends Component {
   render() {
     return(
       <div>
-      <form>
-          Title: <input type="text" value={this.state.title} onChange={(e) => this.handleInputChange("title", e)} /> <br />
-          Artist: <input type="text" value={this.state.artist} onChange={(e) => this.handleInputChange("artist", e)} /> <br />
-          Album: <input type="text" value={this.state.album} onChange={(e) => this.handleInputChange("album", e)} /> <br />
-          Year: <input type="number" value={this.state.year} onChange={(e) => this.handleInputChange("year", e)} /> <br />
-          Genre: <input type="text" value={this.state.genre} onChange={(e) => this.handleInputChange("genre", e)} /> <br />
-          Embed URL: <input type="text" value={this.state.embed_url} onChange={(e) => this.handleInputChange("embed_url", e)} /> <br />
-          Hosted @: <select type="select" value={this.state.host} onChange={(e) => this.handleInputChange("host", e)}>
-            <option value="bc">Bandcamp</option>
-            <option value="sc">Soundcloud</option>
-            <option value="yt">Youtube</option>
-          </select>
-          Image: <input type="text" value={this.state.upload_img} onChange={(e) => this.handleInputChange("upload_img", e)} /> <br />
-          Type: <select type="select" value={this.state.upload_type} onChange={(e) => this.handleInputChange("upload_type", e)}>
-            <option value="track">Track</option>
-            <option value="album">Album</option>
-          </select>
-          <button onClick={(e) => this.handleClick(e)}>Upload</button>
-        </form>
+        <Container>
+          <Col xs="6">
+            <div>Professionally fuck off</div>
+          </Col>
+          <Col xs="6">
+            <Form>
+              <FormGroup>
+                <Label>Title </Label>
+                <Input type="text" value={this.state.title} onChange={(e) => this.handleInputChange("title", e)} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Artist </Label>
+                <Input type="text" value={this.state.artist} onChange={(e) => this.handleInputChange("artist", e)} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Album </Label>
+                <Input type="text" value={this.state.album} onChange={(e) => this.handleInputChange("album", e)} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Year </Label>
+                <Input type="number" value={this.state.year} onChange={(e) => this.handleInputChange("year", e)} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Genre </Label>
+                <Input type="text" value={this.state.genre} onChange={(e) => this.handleInputChange("genre", e)} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Track URL </Label>
+                <Input type="text" value={this.state.embed_url} onChange={(e) => this.handleInputChange("embed_url", e)} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Title </Label>
+                <select type="select" value={this.state.host} onChange={(e) => this.handleInputChange("host", e)}>
+                  <option value="bc">Bandcamp</option>
+                  <option value="sc">Soundcloud</option>
+                  <option value="yt">Youtube</option>
+                </select>
+              </FormGroup>
+              <FormGroup>
+                <Label>Title </Label>
+                <Input type="text" value={this.state.upload_img} onChange={(e) => this.handleInputChange("upload_img", e)} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Type </Label>
+                <select type="select" value={this.state.upload_type} onChange={(e) => this.handleInputChange("upload_type", e)}>
+                  <option value="track">Track</option>
+                  <option value="album">Album</option>
+                </select>
+              </FormGroup>
+              <Button onClick={(e) => this.handleClick(e)}>Upload</Button>
+            </Form>
+          </Col>
+        </Container>
       </div>
     )
   }
