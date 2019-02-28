@@ -106,7 +106,6 @@ router.post('/login-with-passport-local-strategy', (req, res, next) => {
 });
 
 router.get("/logout", (req, res) => {
-  console.log("auth.js get /logout");
   req.logout();
   res.json({ message: 'You are out!' });
 })

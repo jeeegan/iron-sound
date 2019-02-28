@@ -13,7 +13,6 @@ class Home extends Component {
     api.getUploadData()
       .then(res => {
         this.setState({uploads: res});
-        console.log(this.state);
       })
   }
 

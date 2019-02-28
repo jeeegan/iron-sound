@@ -47,7 +47,6 @@ export default {
   },
 
   logout() {
-    console.log("api.js logout")
     localStorage.removeItem('user')
     return service
       .get('/logout')
