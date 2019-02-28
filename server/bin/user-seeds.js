@@ -3,6 +3,8 @@
 // To execute this seed, run from the root of the project
 // $ node bin/seeds.js
 
+require('dotenv').config();
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
@@ -13,6 +15,7 @@ require('../configs/database')
 
 let users = [
   {
+    _id: "5c77e61ee8e56c780ea00115",
     email: "biffyclyro@email.com",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
     display_name: "Biffy",
@@ -25,6 +28,7 @@ let users = [
     user_img: "",
 },
 {
+  _id: "5c77e8e1f3526c79799c2509",
   email: "daftpunk@email.com",
   password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
   display_name: "Daft Punk",
