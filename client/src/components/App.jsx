@@ -5,7 +5,6 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Upload from './pages/Upload';
 import Profile from './pages/Profile';
-import api from '../api';
 import Navbar from './Navbar';
 
 class App extends Component {

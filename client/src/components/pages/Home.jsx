@@ -25,7 +25,7 @@ class Home extends Component {
           <h3>Uploads:</h3>
           <ul className="upload-list">
           {this.state.uploads && this.state.uploads.map( upload => {
-            return <li><iframe style={{width: "50%", height: "150px"}} key={upload._id} src={upload.embed_url}></iframe></li>
+            return <li key={upload._id}><iframe title={upload.title} style={{width: "80%", height: "150px"}} src={upload.embed_url}></iframe></li>
           })}
           </ul>
         </div>

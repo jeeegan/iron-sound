@@ -53,7 +53,7 @@ class Upload extends Component {
       <div>
         <Container>
           <Row>
-          <Col xs="6">
+          <Col xs="10">
             <Form>
               <FormGroup>
                 <Label>Title </Label>
