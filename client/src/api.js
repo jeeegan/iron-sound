@@ -53,10 +53,9 @@ export default {
       .get('/logout')
   },
 
-  upload(data) {
+  upload(formData) {
     return service
-      .post('/upload', 
-      data)
+      .post('/upload', formData)
       .then(res => res.data)
       .catch(errHandler)
   },

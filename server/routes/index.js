@@ -1,12 +1,17 @@
-const express = require('express')
-const { isLoggedIn } = require('../middlewares')
-const router = express.Router()
-const Upload = require("../models/Upload")
-const User = require("../models/User")
+const express = require('express');
+const { isLoggedIn } = require('../middlewares');
+const router = express.Router();
+const Upload = require("../models/Upload");
+const User = require("../models/User");
+const uploader = require('../configs/cloudinary-setup');
 
-router.post("/upload", (req, res, next) => {
+router.post("/upload", uploader.single("upload_img"), (req, res, next) => {
   const { title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type } = req.body
   const newUpload = new Upload({ title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type, _created_by: req.user._id })
+
+  if (req.file) {
+    newUpload.upload_img = req.file.secure_url;
+  }
 
   newUpload.save()
   .then((data) => {
@@ -15,7 +20,8 @@ router.post("/upload", (req, res, next) => {
   .catch(error => {
     console.log(error)
   })
-})
+
+});
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
   User.findOne({ _id: req.params.id })
@@ -25,7 +31,7 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
   .catch(error => {
     console.log(error)
   })
-}) 
+});
 
 router.get("/", (req, res, next) => {
   Upload.find()
@@ -35,6 +41,6 @@ router.get("/", (req, res, next) => {
     .catch(error => {
       console.log(error)
     })
-  })
+});
 
 module.exports = router;

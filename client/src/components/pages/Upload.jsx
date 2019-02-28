@@ -14,7 +14,7 @@ class Upload extends Component {
       tags: [],
       embed_url: "",
       host: 'bc',
-      upload_img: "",
+      upload_img: null,
       upload_type: "track",
     };
   }
@@ -25,22 +25,26 @@ class Upload extends Component {
     })
   }
 
+  handleFileUpload = e => {
+    this.setState({
+      upload_img: e.target.files[0]
+    })
+  }
+
   handleClick(e) {
     e.preventDefault()
-    let data = {
-      title: this.state.title,
-      artist: this.state.artist,
-      album: this.state.album,
-      year: this.state.year,
-      genre: this.state.genre,
-      tags: this.state.tags,
-      embed_url: this.state.embed_url,
-      host: this.state.host,
-      upload_img: this.state.upload_img,
-      upload_type: this.state.upload_type,
-      message: null
-    }
-    api.upload(data)
+    let formData = new FormData()
+    formData.append("title", this.state.title)
+    formData.append("artist", this.state.artist)
+    formData.append("album", this.state.album)
+    formData.append("year", this.state.year)
+    formData.append("genre", this.state.genre)
+    formData.append("tags", this.state.tags)
+    formData.append("embed_url", this.state.embed_url)
+    formData.append("host", this.state.host)
+    formData.append("upload_img", this.state.upload_img)
+    formData.append("upload_type", this.state.upload_type)
+    api.upload(formData)
       .then(result => {
         console.log('SUCCESS!')
         this.props.history.push("/") // Redirect to the home page
@@ -89,7 +93,7 @@ class Upload extends Component {
               </FormGroup>
               <FormGroup>
                 <Label>Image </Label>
-                <Input type="text" value={this.state.upload_img} onChange={(e) => this.handleInputChange("upload_img", e)} />
+                <Input type="file" onChange={(e) => this.handleFileUpload(e)} />
               </FormGroup>
               <FormGroup>
                 <Label>Upload Type </Label>
