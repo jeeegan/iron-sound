@@ -1,6 +1,6 @@
 // --------------------
 // Definition of variables
-$primary: #32c3ff;
+$primary: white;
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
@@ -10,6 +10,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: white;
+  background-color: black;
 }
 
 .info {
@@ -30,10 +32,8 @@ body {
 .App {
   .App-header {
     padding: 20px 0;
-    color: black;
 
     a {
-      color: black;
       padding: 0 2vw;
       text-decoration: unset;
       
@@ -65,7 +65,7 @@ body {
 
 // Reusable global style classes
   .pageContent {
-    padding: 0 11vw;
+    padding: 10vh 15vw;
   }
 
 // --------------------
@@ -74,6 +74,28 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+  }
+
+  .link-icons {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row; 
+  }
+
+  .profile-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .location {
+    color: red;
   }
 }
 
