@@ -6,23 +6,84 @@ import Signup from './pages/Signup';
 import Upload from './pages/Upload';
 import Profile from './pages/Profile';
 import Navbar from './Navbar';
+import api from '../api';
+import WaveSurfer from 'wavesurfer.js';
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {};
+    this.state = { 
+      homeState: {
+        display_name: ""  
+      }
+    };    
+  }
+
+  state = {};
+
+
+  getHomeData = () => {
+    api.userData()
+      .then(res => {
+        console.log("Got home state", res)
+        this.setState( { homeState: res} );
+      })
+      .catch(console.log)
+    api.getUploadData()
+      .then(res => {
+        console.log("Got uploads", res)
+        this.setState( { homeUploads: res } );
+      })
+  }
+
+  loggedIn = (trueOrFalse) => {
+    this.getHomeData()
+  }
+
+  loggedOut = (trueOrFalse) => {
+    this.setState({ 
+      homeState: {
+        display_name: ""  
+      }
+    })
+  }
+
+  componentDidMount() {
+    this.getHomeData()
+  }
+
+  componentDidUpdate() {
+    if (this.wavesurfer) return;
+    this.wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: 'violet',
+      progressColor: 'purple'
+    });
+    this.wavesurfer.load('track1.mp3');
+  }
+
+  onClickButton = () => {
+    this.wavesurfer.playPause();
   }
 
   render() {
+
+
     return (
       <div className="App">
         <header className="App-header">
-          <Navbar/>
+          <Navbar loggedOut={this.loggedOut} />
         </header>
+        <div id="waveform"></div>
+        <button onClick={this.onClickButton} >Play.</button>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact render={() =>
+              <Home userData={this.state.homeState} uploads={this.state.homeUploads }/>
+            } />
           <Route path="/signup" component={Signup} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" render={() =>
+              <Login loggedIn={this.loggedIn} />
+            }  />
           <Route path="/upload" component={Upload} />
           <Route path="/profile" component={Profile} />
           <Route render={() => <h2>404</h2>} />

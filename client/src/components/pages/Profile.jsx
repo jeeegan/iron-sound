@@ -10,7 +10,6 @@ class Profile extends Component {
       this.setState(res)
     })
     .catch(console.log)
-  
   }
   
   render() {     
@@ -42,6 +41,7 @@ class Profile extends Component {
             <img style={{width: '24vw', height: 'auto', borderRadius: '50%'}}src={this.state.user_img} alt=""/>
           </div>
         </div>
+
       </div>
     );
   }

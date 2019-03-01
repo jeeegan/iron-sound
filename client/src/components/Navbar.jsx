@@ -2,7 +2,8 @@ import React from 'react';
 import api from '../api';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    console.log("props.history", props.history)
     return(
       <div className="navbar">
         <div className="nav-left">
@@ -13,7 +14,12 @@ const Navbar = () => {
         <div className="nav-right">
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
-          {api.isLoggedIn() && <NavLink to="/" onClick={(e) => api.logout()}>Logout</NavLink>}
+          {api.isLoggedIn() && <NavLink to="/" onClick={(e) => 
+              api.logout()
+              .then(() => {
+                props.loggedOut(true)
+              })
+          }>Logout</NavLink>}
         </div>
       </div>
     )
