@@ -10,5 +10,8 @@
   },
   "engines": {
     "node": "8.9.4"
+  },
+  "dependencies": {
+    "wavesurfer.js": "^2.1.3"
   }
 }
