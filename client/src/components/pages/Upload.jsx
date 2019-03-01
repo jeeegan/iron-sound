@@ -93,15 +93,15 @@ class Upload extends Component {
                 </select>
               </FormGroup>
               <FormGroup>
-                <Label>Image </Label>
-                <Input type="file" onChange={(e) => this.handleFileUpload(e)} />
-              </FormGroup>
-              <FormGroup>
                 <Label>Upload Type </Label>
                 <select type="select" value={this.state.upload_type} onChange={(e) => this.handleInputChange("upload_type", e)}>
                   <option value="track">Track</option>
                   <option value="album">Album</option>
                 </select>
+              </FormGroup>
+              <FormGroup>
+                <Label>Image </Label>
+                <Input type="file" onChange={(e) => this.handleFileUpload(e)} />
               </FormGroup>
               <Button onClick={(e) => this.handleClick(e)}>Upload</Button>
             </Form>

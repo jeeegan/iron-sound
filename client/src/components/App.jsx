@@ -6,11 +6,16 @@ import Signup from './pages/Signup';
 import Upload from './pages/Upload';
 import Profile from './pages/Profile';
 import Navbar from './Navbar';
+import api from '../api';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {};
+  }
+
+  logout() {
+    api.logout();
   }
 
   render() {
