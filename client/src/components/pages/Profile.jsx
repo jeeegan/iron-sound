@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
+import Wavesurfer from '../Wavesurfer';
 
 class Profile extends Component {
   state = {}
@@ -41,6 +42,7 @@ class Profile extends Component {
             <img src={this.state.user_img} alt="profile" style={{width: "24vh", height: "auto", borderRadius: "50%"}}/>
           </div>
         </div>
+        <Wavesurfer />
 
       </div>
     );

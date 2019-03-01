@@ -7,7 +7,7 @@ import Upload from './pages/Upload';
 import Profile from './pages/Profile';
 import Navbar from './Navbar';
 import api from '../api';
-import WaveSurfer from 'wavesurfer.js';
+// import WaveSurfer from 'wavesurfer.js';
 
 
 class App extends Component {
@@ -53,19 +53,19 @@ class App extends Component {
     this.getHomeData()
   }
 
-  componentDidUpdate() {
-    if (this.wavesurfer) return;
-    this.wavesurfer = WaveSurfer.create({
-      container: '#waveform',
-      waveColor: 'violet',
-      progressColor: 'purple'
-    });
-    this.wavesurfer.load('track1.mp3');
-  }
+  // componentDidUpdate() {
+  //   if (this.wavesurfer) return;
+  //   this.wavesurfer = WaveSurfer.create({
+  //     container: '#waveform',
+  //     waveColor: 'violet',
+  //     progressColor: 'purple'
+  //   });
+  //   this.wavesurfer.load('track1.mp3');
+  // }
 
-  onClickButton = () => {
-    this.wavesurfer.playPause();
-  }
+  // onClickButton = () => {
+  //   this.wavesurfer.playPause();
+  // }
 
   logout() {
     api.logout();
@@ -79,8 +79,8 @@ class App extends Component {
         <header className="App-header">
           <Navbar loggedOut={this.loggedOut} />
         </header>
-        <div id="waveform"></div>
-        <button onClick={this.onClickButton} >Play.</button>
+        {/* <div id="waveform"></div>
+        <button onClick={this.onClickButton} >Play.</button> */}
         <Switch>
           <Route path="/" exact render={() =>
               <Home userData={this.state.homeState} uploads={this.state.homeUploads }/>
