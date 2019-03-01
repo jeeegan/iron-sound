@@ -7,10 +7,8 @@ import Upload from './pages/Upload';
 import Profile from './pages/Profile';
 import Navbar from './Navbar';
 import api from '../api';
-<<<<<<< HEAD
 import WaveSurfer from 'wavesurfer.js';
-=======
->>>>>>> 9f2fe0e9f69c221debbe6af1033127116c642347
+
 
 class App extends Component {
   constructor(props) {
