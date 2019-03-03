@@ -6,8 +6,10 @@ class Wavesurfer extends Component {
     if (this.wavesurfer) return;
     this.wavesurfer = WaveSurfer.create({
       container: '#waveform',
-      waveColor: '#FC0',
-      progressColor: 'grey'
+      waveColor: 'Cornsilk',
+      progressColor: 'Maroon',
+      height: '110',
+      cursorColor: 'white'
     });
     this.wavesurfer.load('track1.mp3');
   }
@@ -19,8 +21,14 @@ class Wavesurfer extends Component {
   render() {
     return(
       <div>
-        <div id="waveform"></div>
-        <button onClick={this.playButton}>Play</button>
+        <div className="media-player">
+          <div className="waveform-right" id="waveform"></div>
+          <div className="media-left">
+            <button className="media-controls play-button" onClick={this.playButton}>
+              <img src="/play-button-white.png" alt=""/>
+            </button>
+          </div>
+        </div>
       </div>
     )
   }

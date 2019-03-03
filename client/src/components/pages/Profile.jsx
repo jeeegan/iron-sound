@@ -39,7 +39,7 @@ class Profile extends Component {
           </div>
           {/* USER IMAGE */}
           <div className="user-img">
-            <img src={this.state.user_img} alt="profile" style={{width: "24vh", height: "auto", borderRadius: "50%"}}/>
+            <img src={this.state.user_img} alt="profile" style={{width: "30vh", height: "auto", border: "2px solid maroon"}}/>
           </div>
         </div>
         <Wavesurfer />
