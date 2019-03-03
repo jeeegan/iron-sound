@@ -22,7 +22,6 @@ class App extends Component {
 
   state = {};
 
-
   getHomeData = () => {
     api.userData()
       .then(res => {
@@ -37,6 +36,7 @@ class App extends Component {
       })
   }
 
+  // LOGIN / LOGOUT
   loggedIn = (trueOrFalse) => {
     this.getHomeData()
   }
@@ -53,34 +53,16 @@ class App extends Component {
     this.getHomeData()
   }
 
-  // componentDidUpdate() {
-  //   if (this.wavesurfer) return;
-  //   this.wavesurfer = WaveSurfer.create({
-  //     container: '#waveform',
-  //     waveColor: 'violet',
-  //     progressColor: 'purple'
-  //   });
-  //   this.wavesurfer.load('track1.mp3');
-  // }
-
-  // onClickButton = () => {
-  //   this.wavesurfer.playPause();
-  // }
-
   logout() {
     api.logout();
   }
 
   render() {
-
-
     return (
       <div className="App">
         <header className="App-header">
           <Navbar loggedOut={this.loggedOut} />
         </header>
-        {/* <div id="waveform"></div>
-        <button onClick={this.onClickButton} >Play.</button> */}
         <Switch>
           <Route path="/" exact render={() =>
               <Home userData={this.state.homeState} uploads={this.state.homeUploads }/>

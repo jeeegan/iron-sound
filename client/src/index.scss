@@ -73,12 +73,13 @@ body {
 
   // MEDIA PLAYER STYLES
   .media-player {
-    display: block;
-    // background-color: rgb(109, 109, 109);
-    background-image: url("/berlinwall.jpg");
-    background-size: cover;
-    height: 21.9vh;
-    border: 2px solid maroon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: solid 1px maroon;
+    padding: 0 2vw;
+    background-image: linear-gradient(45deg, rgb(78, 9, 9), rgb(41, 41, 41));
+    border-radius: 10%;
   }
 
   .media-controls {
@@ -90,23 +91,25 @@ body {
     border-radius: 50%;
     margin: 0.5vh 0.5vw;
   }
-
+ 
+  .control-panel {
+    display: flex;
+  }
   .play-button {
-    float: right;
     margin: 6vh 1vw;
-
   }
-
-  .media-left {
-    
+  .play-button:hover {
+    background-color: maroon;
   }
+  // .media-time {
+
+  // }
 
   .waveform-right {
-    width: 60%;
-    float: right;
-    border: 2px maroon solid;
-    background-color: black;
-    margin: 2vh 1vw;
+    width: 70%;
+    // border: solid 2px rgb(48, 48, 48);
+    background-image: linear-gradient(45deg, rgb(0, 0, 0), rgb(112, 112, 112)); 
+    border-radius: 10%;
   }
 
   // FORM STYLES
