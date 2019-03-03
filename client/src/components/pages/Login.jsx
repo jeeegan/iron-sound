@@ -33,10 +33,18 @@ class Login extends Component {
     return (
       <div className="Login pageContent">
         <h2>Login</h2>
-        <form>
-          Email: <input type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> <br />
-          Password: <input type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> <br />
-          <button onClick={(e) => this.handleClick(e)}>Login</button>
+        <form className="form-vertical">
+          <div>
+            <label className="form-label" for="email">Email</label> <br/>
+            <input className="form-input" id="email" type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> 
+          </div>
+
+          <div>
+            <label className="form-label" for="password">Password</label> <br/>
+            <input className="form-input" id="password" type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> 
+          </div>
+          
+          <button className="form-button" onClick={(e) => this.handleClick(e)}>Login</button>
         </form>
         {this.state.message && <div className="info info-danger">
           {this.state.message}

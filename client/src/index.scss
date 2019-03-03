@@ -69,9 +69,35 @@ body {
   }
 
   // FORM STYLES
-  .form {
+  .form-horizontal {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
+  
+  .form-vertical {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-item {
+    flex-grow: 1;
+  }
+
+  .form-label {
+    margin: 2vh 0 0 0;
+  }
+
+  .form-input {
+    width: 90%;
+  }
+
+  .form-button {
+    width: 20%;
+    margin: 4vh 0;
+  }
+
   // .input {
     
   // }

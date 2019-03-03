@@ -8,7 +8,7 @@ class Upload extends Component {
       title: "",
       artist: "",
       album: "",
-      year: 1990,
+      year: "",
       genre: "",
       tags: [],
       embed_url: "",
@@ -56,42 +56,67 @@ class Upload extends Component {
     return(
       <div className="pageContent">
         <h2>Add Content</h2>
-        <form action="/upload" class="form">
-          
-          <label for="title">Title</label>
-          <input id="title" type="text" value={this.state.title} onChange={(e) => this.handleInputChange("title", e)} />
+        <form action="/upload">
+          <div className="form-horizontal">
+            <div className="form-vertical">
 
-          <label for="artist">Artist</label>
-          <input id="artist" type="text" value={this.state.artist} onChange={(e) => this.handleInputChange("artist", e)} />
+              <div className="form-item">
+                <label className="form-label" for="trackUrl">Track URL</label> <br/>
+                <input className="form-input" id="trackUrl" type="text" value={this.state.embed_url} onChange={(e) => this.handleInputChange("embed_url", e)} />
+              </div>
 
-          <label for="album">Album</label>
-          <input id="album" type="text" value={this.state.album} onChange={(e) => this.handleInputChange("album", e)} />
+              <div className="form-item">
+                <label className="form-label" for="trackHost">Host</label> <br/>
+                <select className="form-input" id="trackHost" type="select" value={this.state.host} onChange={(e) => this.handleInputChange("host", e)}>
+                  <option value="bc">Bandcamp</option>
+                  <option value="sc">Soundcloud</option>
+                  <option value="yt">Youtube</option>
+                </select>
+              </div>
 
-          <label for="year">Year</label>
-          <input type="number" value={this.state.year} onChange={(e) => this.handleInputChange("year", e)} />
+              <div className="form-item">
+                <label className="form-label" for="trackImage">Track Image</label> <br/>
+                <input className="form-input" id="trackImage" type="file" onChange={(e) => this.handleFileUpload(e)} />
+              </div>
 
-          <label for="genre">Genre</label>
-          <input type="text" value={this.state.genre} onChange={(e) => this.handleInputChange("genre", e)} />
+              <div className="form-item">
+                <label className="form-label" for="uploadType">Upload Type</label> <br/>
+                <select className="form-input" id="uploadType" type="select" value={this.state.upload_type} onChange={(e) => this.handleInputChange("upload_type", e)}>
+                  <option value="track">Track</option>
+                  <option value="album">Album</option>
+                </select>
+              </div>
+            </div>
 
-          <label for="trackUrl">Track URL</label>
-          <input id="trackUrl" type="text" value={this.state.embed_url} onChange={(e) => this.handleInputChange("embed_url", e)} />
+            <div className="form-vertical">
+              <div className="form-item">
+                <label className="form-label" for="title">Title</label> <br/>
+                <input className="form-input" id="title" type="text" value={this.state.title} onChange={(e) => this.handleInputChange("title", e)} />
+              </div>
 
-          <label for="trackHost">Host</label>
-          <select id="trackHost" type="select" value={this.state.host} onChange={(e) => this.handleInputChange("host", e)}>
-            <option value="bc">Bandcamp</option>
-            <option value="sc">Soundcloud</option>
-            <option value="yt">Youtube</option>
-          </select>
+              <div className="form-item">
+                <label className="form-label" for="artist">Artist</label> <br/>
+                <input className="form-input" id="artist" type="text" value={this.state.artist} onChange={(e) => this.handleInputChange("artist", e)} />
+              </div>
 
-          <label for="trackImage">Track Image</label>
-          <input id="trackImage" type="file" onChange={(e) => this.handleFileUpload(e)} />
+              <div className="form-item">
+                <label className="form-label" for="album">Album</label> <br/>
+                <input className="form-input" id="album" type="text" value={this.state.album} onChange={(e) => this.handleInputChange("album", e)} />
+              </div>
 
-          <label for="uploadType">Upload Type</label>
-          <select id="uploadType" type="select" value={this.state.upload_type} onChange={(e) => this.handleInputChange("upload_type", e)}>
-            <option value="track">Track</option>
-            <option value="album">Album</option>
-          </select>
-          <button onClick={(e) => this.handleClick(e)}>Upload</button>
+              <div className="form-item">
+                <label className="form-label" for="year">Year</label> <br/>
+                <input className="form-input" type="number" value={this.state.year} onChange={(e) => this.handleInputChange("year", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" for="genre">Genre</label> <br/>
+                <input className="form-input" type="text" value={this.state.genre} onChange={(e) => this.handleInputChange("genre", e)} />
+              </div>
+            </div>
+          </div>
+
+          <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
         </form>
       </div>
     )

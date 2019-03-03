@@ -6,13 +6,13 @@ class Wavesurfer extends Component {
     if (this.wavesurfer) return;
     this.wavesurfer = WaveSurfer.create({
       container: '#waveform',
-      waveColor: 'violet',
-      progressColor: 'purple'
+      waveColor: '#FC0',
+      progressColor: 'grey'
     });
     this.wavesurfer.load('track1.mp3');
   }
 
-  onClickButton = () => {
+  playButton = () => {
     this.wavesurfer.playPause();
   }
 
@@ -20,7 +20,7 @@ class Wavesurfer extends Component {
     return(
       <div>
         <div id="waveform"></div>
-        <button onClick={this.onClickButton}>Play</button>
+        <button onClick={this.playButton}>Play</button>
       </div>
     )
   }

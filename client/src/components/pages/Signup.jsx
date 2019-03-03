@@ -56,7 +56,7 @@ class Signup extends Component {
     return (
       <div className="Signup pageContent">
         <h2>Signup</h2>
-        <form>
+        <form className="form-vertical">
           Display Name: <input type="text" value={this.state.display_name} onChange={(e) => this.handleInputChange("display_name", e)} /> <br />
           Password: <input type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> <br />
           Email: <input type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> <br />
@@ -67,7 +67,8 @@ class Signup extends Component {
           Bio: <input type="text" value={this.state.bio} onChange={(e) => this.handleInputChange("bio", e)} /> <br />
           Location: <input type="text" value={this.state.location} onChange={(e) => this.handleInputChange("location", e)} /> <br />
           Profile Picture: <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
-          <button onClick={(e) => this.handleClick(e)}>Signup</button>
+
+          <button className="form-button" onClick={(e) => this.handleClick(e)}>Signup</button>
         </form>
         {this.state.message && <div className="info info-danger">
           {this.state.message}
