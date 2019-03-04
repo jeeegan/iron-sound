@@ -42,7 +42,7 @@ class Profile extends Component {
             <img src={this.state.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
           </div>
         </div>
-        <Wavesurfer />
+        <Wavesurfer artist="Alec Budd" title="U1 to Uhland"/>
 
       </div>
     );

@@ -4,11 +4,12 @@ import WaveSurfer from 'wavesurfer.js';
 class Wavesurfer extends Component {
   state = {
     buttonimg: "/play-button-white.png",
+    currentTime: "",
     duration: ""
   };
   
-  componentDidUpdate() {
-    if (this.wavesurfer) return;
+  componentDidMount() {
+    // this.setState( {duration: this.wavesurfer.getDuration()} )
     this.wavesurfer = WaveSurfer.create({
       container: '#waveform',
       waveColor: 'Cornsilk',
@@ -17,6 +18,15 @@ class Wavesurfer extends Component {
       cursorColor: 'red'
     });
     this.wavesurfer.load('track1.mp3');
+
+    setInterval(() => {
+      this.setState({
+        currentTime: this.wavesurfer.getCurrentTime()
+      })
+    }, 200)
+  }
+
+  componentDidUpdate() {
   }
 
   playButton = () => {
@@ -28,22 +38,35 @@ class Wavesurfer extends Component {
     }  
   }
 
+  convertNumberToMinutesSeconds(numberOfSeconds) {
+    let min = Math.floor(numberOfSeconds / 60)
+    let sec = Math.floor(numberOfSeconds % 60)
+    if (sec < 10) {
+      sec = "0" + sec;
+    }
+    return min + ":" + sec
+  }
+
   render() {
+    let duration = this.wavesurfer && this.wavesurfer.getDuration()
     return(
       <div>
+        <div className="track-info">
+          <div className="artist">{this.props.artist}</div>
+          <div className="title">{this.props.title}</div>
+        </div>
         <div className="media-player">
-
-          <div className="control-panel">
-            <button className="media-controls play-button" onClick={this.playButton}>
+          <img className="album-art" src="albumart.jpg" alt="album-art"/>
+          <div className="control-panel">          
+            <button className="play-button" onClick={this.playButton}>
               <img src={this.state.buttonimg} alt=""/>
             </button>
             <div className="media-time">
-              <p>{this.state.duration}</p>
+              <p>{this.convertNumberToMinutesSeconds(this.state.currentTime)} / {this.convertNumberToMinutesSeconds(duration)}</p>
             </div>
           </div>
 
           <div className="waveform-right" id="waveform"></div>
-
         </div>
       </div>
     )
