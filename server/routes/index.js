@@ -25,10 +25,15 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
 
 router.get("/profile", (req, res, next) => {
   User.findOne({ _id: req.user.id })
-  .populate('_created_by')
-  .then((data) => {
-    
-    res.json(data);
+  .then((user) => {
+    console.log(user)
+    Upload.find({_created_by: user._id})
+    .then(uploads => {
+      res.json({
+        user: user,
+        uploads: uploads
+      });
+    })
   })
   .catch(error => {
     console.log(error)
