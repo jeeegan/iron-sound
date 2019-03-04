@@ -10,7 +10,7 @@ class Wavesurfer extends Component {
   
   componentDidMount() {
     this.wavesurfer = WaveSurfer.create({
-      container: '#waveform',
+      container: '#waveform'+this.props.identifier,
       waveColor: 'Cornsilk',
       progressColor: 'maroon',
       height: '90',
@@ -62,7 +62,7 @@ class Wavesurfer extends Component {
             </div>
           </div>
 
-          <div className="waveform-right" id="waveform"></div>
+          <div className="waveform-right" id={`waveform${this.props.identifier}`}></div>
         </div>
       </div>
     )
