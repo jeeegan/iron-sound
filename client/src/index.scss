@@ -6,6 +6,10 @@ $primary: white;
 
 // --------------------
 // Style reusable for all components
+canvas {
+  position: relative !important;
+}
+
 body {
   margin: 0;
   padding: 0;
