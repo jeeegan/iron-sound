@@ -15,11 +15,11 @@ require('../configs/database');
 
 let uploads = [
   {
-    title: "Modern Love",
-    artist: "Biffy Clyro",
-    album: "Howard Stern tribute to David Bowie",
+    title: "Cuvry Bleibt",
+    artist: "Alec Budd",
+    album: "Beats",
     year: 2019,
-    genre: "Rock",
+    genre: "Techno",
     tags: [],
     upload_url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/574077195&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
     _created_by: "5c77e61ee8e56c780ea00115",
