@@ -14,8 +14,7 @@ class Wavesurfer extends Component {
       waveColor: 'Cornsilk',
       progressColor: 'maroon',
       height: '90',
-      cursorColor: 'red',
-      fillParent: true
+      cursorColor: 'red'
     });
     this.wavesurfer.load(this.props.upload_url);
 
@@ -62,7 +61,8 @@ class Wavesurfer extends Component {
               <p>{this.convertNumberToMinutesSeconds(this.state.currentTime)} / {this.convertNumberToMinutesSeconds(duration)}</p>
             </div>
           </div>
-          <div style={{position: 'relative'}}className="waveform-right" id="waveform"></div>
+
+          <div className="waveform-right" id="waveform"></div>
         </div>
       </div>
     )
