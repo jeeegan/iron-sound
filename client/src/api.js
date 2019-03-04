@@ -68,6 +68,15 @@ export default {
       .catch(errHandler)
   },
 
+  getProfile() {
+    return service
+      .get('/profile')
+      .then(res => {
+        return res.data;
+      })
+      .catch(errHandler);
+  },
+
   getUploadData() {
     return service
       .get('/')
