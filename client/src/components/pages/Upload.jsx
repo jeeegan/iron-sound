@@ -11,7 +11,7 @@ class Upload extends Component {
       year: "",
       genre: "",
       tags: [],
-      embed_url: "",
+      upload_url: "",
       host: 'bc',
       upload_img: null,
       upload_type: "track",
@@ -26,7 +26,7 @@ class Upload extends Component {
 
   handleFileUpload = e => {
     this.setState({
-      embed_url: e.target.files[0]
+      upload_url: e.target.files[0]
     })
   }
 
@@ -39,7 +39,7 @@ class Upload extends Component {
     formData.append("year", this.state.year);
     formData.append("genre", this.state.genre);
     formData.append("tags", this.state.tags);
-    formData.append("embed_url", this.state.embed_url);
+    formData.append("upload_url", this.state.upload_url);
     api.upload(formData)
       .then(result => {
         console.log('SUCCESS!')
@@ -58,8 +58,8 @@ class Upload extends Component {
             <div className="form-vertical">
 
               <div className="form-item">
-                <label className="form-label" for="embed_url">Track Image</label> <br/>
-                <input className="form-input" id="embed_url" type="file" onChange={(e) => this.handleFileUpload(e)} />
+                <label className="form-label" for="upload_url">Track Image</label> <br/>
+                <input className="form-input" id="upload_url" type="file" onChange={(e) => this.handleFileUpload(e)} />
               </div>
               
             </div>

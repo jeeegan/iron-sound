@@ -7,8 +7,6 @@ import Upload from './pages/Upload';
 import Profile from './pages/Profile';
 import Navbar from './Navbar';
 import api from '../api';
-// import WaveSurfer from 'wavesurfer.js';
-
 
 class App extends Component {
   constructor(props) {
@@ -25,13 +23,11 @@ class App extends Component {
   getHomeData = () => {
     api.userData()
       .then(res => {
-        console.log("Got home state", res)
         this.setState( { homeState: res} );
       })
       .catch(console.log)
     api.getUploadData()
       .then(res => {
-        console.log("Got uploads", res)
         this.setState( { homeUploads: res } );
       })
   }

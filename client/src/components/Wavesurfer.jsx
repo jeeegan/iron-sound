@@ -9,7 +9,6 @@ class Wavesurfer extends Component {
   };
   
   componentDidMount() {
-    // this.setState( {duration: this.wavesurfer.getDuration()} )
     this.wavesurfer = WaveSurfer.create({
       container: '#waveform',
       waveColor: 'Cornsilk',
@@ -24,9 +23,6 @@ class Wavesurfer extends Component {
         currentTime: this.wavesurfer.getCurrentTime()
       })
     }, 200)
-  }
-
-  componentDidUpdate() {
   }
 
   playButton = () => {

@@ -27,19 +27,6 @@ let users = [
     location: "Scotland",
     user_img: "",
 },
-{
-  _id: "5c77e8e1f3526c79799c2509",
-  email: "daftpunk@email.com",
-  password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
-  display_name: "Daft Punk",
-  bc_url: "https://bandcamp.com/daftpunk",
-  sc_url: "https://soundcloud.com/daftalive",
-  yt_url: "https://www.youtube.com/channel/UC_kRDKYrUlrbtrSiyu5Tflg",
-  custom_url: "https://daftpunk.com",
-  bio: "Daft Punk are a French electronic music duo formed in Paris in 1993 by Guy-Manuel de Homem-Christo and Thomas Bangalter. They achieved popularity in the late 1990s as part of the French house movement, and had success in the years following, combining elements of house music with funk, techno, disco, rock, and synthpop. They have worn ornate helmets and gloves to assume robot personas in most public appearances since 1999 and rarely grant interviews or appear on television. The duo were managed from 1996 to 2008 by Pedro Winter (also known as Busy P), the head of Ed Banger Records.",
-  location: "France",
-  user_img: "",
-}
 ]
 
 User.deleteMany()

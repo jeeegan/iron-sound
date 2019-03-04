@@ -20,7 +20,7 @@ const uploadSchema = new Schema({
     required: true 
   },
   tags: [String],
-  embed_url: { 
+  upload_url: { 
     type: String, 
     required: true, 
     match: /^https?\:\/\// // Must start by "http://" or "https://" }
