@@ -15,11 +15,11 @@ class Profile extends Component {
         user: res.user,
         uploads: res.uploads
       });
+      console.log(this.state.uploads)
     })
     .catch(console.log);
     
   }
-
   
   render() {     
     return (
@@ -50,7 +50,14 @@ class Profile extends Component {
             <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
           </div>
         </div>
-        <Wavesurfer artist="Alec Budd" title="U1 to Uhland"/>
+        <div>
+          <h3>Uploads:</h3>
+          <ul className="upload-list">
+          {this.state.uploads && this.state.uploads.map( upload => {
+            return <Wavesurfer key={upload._id} identifier={upload._id} upload_url={upload.upload_url} artist={upload.artist} title={upload.title}/>
+          })}
+          </ul>
+        </div>
 
       </div>
     );
