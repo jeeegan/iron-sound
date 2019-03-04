@@ -52,11 +52,9 @@ class Profile extends Component {
         </div>
         <div>
           <h3>Uploads:</h3>
-          <ul className="upload-list">
           {this.state.uploads && this.state.uploads.map( upload => {
             return <Wavesurfer key={upload._id} identifier={upload._id} upload_url={upload.upload_url} artist={upload.artist} title={upload.title}/>
           })}
-          </ul>
         </div>
 
       </div>
