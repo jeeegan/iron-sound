@@ -21,7 +21,7 @@ let uploads = [
     year: 2019,
     genre: "Techno",
     tags: [],
-    upload_url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/574077195&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
+    upload_url: "https://res.cloudinary.com/jeeegan/video/upload/v1551707921/cuvry_bleibt.mp3",
     _created_by: "5c77e61ee8e56c780ea00115",
 },
 ]

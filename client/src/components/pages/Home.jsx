@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Wavesurfer from '../Wavesurfer';
 
 class Home extends Component {
 
@@ -10,7 +11,7 @@ class Home extends Component {
           <h3>Uploads:</h3>
           <ul className="upload-list">
           {this.props.uploads && this.props.uploads.map( upload => {
-            return <li key={upload._id}>{upload.title}</li>
+            return <Wavesurfer key={upload._id} upload_url={upload.upload_url} artist={upload.artist} title={upload.title}/>
           })}
           </ul>
         </div>

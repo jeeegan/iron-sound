@@ -16,7 +16,7 @@ class Wavesurfer extends Component {
       height: '90',
       cursorColor: 'red'
     });
-    this.wavesurfer.load('track1.mp3');
+    this.wavesurfer.load(this.props.upload_url);
 
     setInterval(() => {
       this.setState({
