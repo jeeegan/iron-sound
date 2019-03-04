@@ -23,7 +23,37 @@ let uploads = [
     tags: [],
     upload_url: "https://res.cloudinary.com/jeeegan/video/upload/v1551707921/cuvry_bleibt.mp3",
     _created_by: "5c77e61ee8e56c780ea00115",
-},
+  },
+  {
+    title: "Uhland",
+    artist: "Alec Budd",
+    album: "Beats",
+    year: 2019,
+    genre: "Techno",
+    tags: [],
+    upload_url: "https://res.cloudinary.com/jeeegan/video/upload/v1551708866/U1_to_Uhlandstra%C3%9Fe_demo.mp3",
+    _created_by: "5c77e61ee8e56c780ea00115",
+  },
+  {
+    title: "Autoimmune",
+    artist: "Alec Budd",
+    album: "Beats",
+    year: 2018,
+    genre: "Techno",
+    tags: [],
+    upload_url: "https://res.cloudinary.com/jeeegan/video/upload/v1551708874/6_28_Autoimmune.mp3",
+    _created_by: "5c77e61ee8e56c780ea00115",
+  },
+  {
+    title: "Lift Me Up",
+    artist: "Alec Budd",
+    album: "Beats",
+    year: 2019,
+    genre: "Techno",
+    tags: [],
+    upload_url: "https://res.cloudinary.com/jeeegan/video/upload/v1551708907/lift_me_up_master_1.wav",
+    _created_by: "5c77e61ee8e56c780ea00115",
+  },
 ]
 
 Upload.deleteMany()
