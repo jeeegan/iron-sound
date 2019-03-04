@@ -25,21 +25,10 @@ const uploadSchema = new Schema({
     required: true, 
     match: /^https?\:\/\// // Must start by "http://" or "https://" }
   },
-  host: {
-    type: String,
-    required: true,
-    enum: ['bc', 'sc', 'yt'],
-  },
   _created_by: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  upload_img: String,
-  upload_type: {
-    type: String,
-    required: true,
-    enum: ['track', 'album']
-  }
 }, {
     timestamps: {
       createdAt: 'created_at',

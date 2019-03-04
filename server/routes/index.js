@@ -5,7 +5,7 @@ const Upload = require("../models/Upload");
 const User = require("../models/User");
 const uploader = require('../configs/cloudinary-setup');
 
-router.post("/upload", uploader.single("upload_img"), (req, res, next) => {
+router.post("/upload", uploader.single("embed_url"), (req, res, next) => {
   const { title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type } = req.body
   const newUpload = new Upload({ title, artist, album, year, genre, tags, embed_url, host, upload_img, upload_type, _created_by: req.user._id })
 

@@ -12,6 +12,7 @@
     "node": "8.9.4"
   },
   "dependencies": {
+    "wavesurfer": "^1.3.4",
     "wavesurfer.js": "^2.1.3"
   }
 }

@@ -26,7 +26,7 @@ class Upload extends Component {
 
   handleFileUpload = e => {
     this.setState({
-      upload_img: e.target.files[0]
+      embed_url: e.target.files[0]
     })
   }
 
@@ -40,9 +40,6 @@ class Upload extends Component {
     formData.append("genre", this.state.genre);
     formData.append("tags", this.state.tags);
     formData.append("embed_url", this.state.embed_url);
-    formData.append("host", this.state.host);
-    formData.append("upload_img", this.state.upload_img);
-    formData.append("upload_type", this.state.upload_type);
     api.upload(formData)
       .then(result => {
         console.log('SUCCESS!')
@@ -61,31 +58,10 @@ class Upload extends Component {
             <div className="form-vertical">
 
               <div className="form-item">
-                <label className="form-label" for="trackUrl">Track URL</label> <br/>
-                <input className="form-input" id="trackUrl" type="text" value={this.state.embed_url} onChange={(e) => this.handleInputChange("embed_url", e)} />
+                <label className="form-label" for="embed_url">Track Image</label> <br/>
+                <input className="form-input" id="embed_url" type="file" onChange={(e) => this.handleFileUpload(e)} />
               </div>
-
-              <div className="form-item">
-                <label className="form-label" for="trackHost">Host</label> <br/>
-                <select className="form-input" id="trackHost" type="select" value={this.state.host} onChange={(e) => this.handleInputChange("host", e)}>
-                  <option value="bc">Bandcamp</option>
-                  <option value="sc">Soundcloud</option>
-                  <option value="yt">Youtube</option>
-                </select>
-              </div>
-
-              <div className="form-item">
-                <label className="form-label" for="trackImage">Track Image</label> <br/>
-                <input className="form-input" id="trackImage" type="file" onChange={(e) => this.handleFileUpload(e)} />
-              </div>
-
-              <div className="form-item">
-                <label className="form-label" for="uploadType">Upload Type</label> <br/>
-                <select className="form-input" id="uploadType" type="select" value={this.state.upload_type} onChange={(e) => this.handleInputChange("upload_type", e)}>
-                  <option value="track">Track</option>
-                  <option value="album">Album</option>
-                </select>
-              </div>
+              
             </div>
 
             <div className="form-vertical">
