@@ -25,7 +25,7 @@ let users = [
     custom_url: "",
     bio: "Experiments & compositions of an electronic nature.",
     location: "Berlin",
-    user_img: ""
+    user_img: "https://res.cloudinary.com/jeeegan/image/upload/v1551710676/avatar-test.jpg"
 },
 ]
 
