@@ -58,7 +58,7 @@ class Upload extends Component {
             <div className="form-vertical">
 
               <div className="form-item">
-                <label className="form-label" for="upload_url">Track Image</label> <br/>
+                <label className="form-label" htmlFor="upload_url">Track Image</label> <br/>
                 <input className="form-input" id="upload_url" type="file" onChange={(e) => this.handleFileUpload(e)} />
               </div>
               
@@ -66,27 +66,27 @@ class Upload extends Component {
 
             <div className="form-vertical">
               <div className="form-item">
-                <label className="form-label" for="title">Title</label> <br/>
+                <label className="form-label" htmlFor="title">Title</label> <br/>
                 <input className="form-input" id="title" type="text" value={this.state.title} onChange={(e) => this.handleInputChange("title", e)} />
               </div>
 
               <div className="form-item">
-                <label className="form-label" for="artist">Artist</label> <br/>
+                <label className="form-label" htmlFor="artist">Artist</label> <br/>
                 <input className="form-input" id="artist" type="text" value={this.state.artist} onChange={(e) => this.handleInputChange("artist", e)} />
               </div>
 
               <div className="form-item">
-                <label className="form-label" for="album">Album</label> <br/>
+                <label className="form-label" htmlFor="album">Album</label> <br/>
                 <input className="form-input" id="album" type="text" value={this.state.album} onChange={(e) => this.handleInputChange("album", e)} />
               </div>
 
               <div className="form-item">
-                <label className="form-label" for="year">Year</label> <br/>
+                <label className="form-label" htmlFor="year">Year</label> <br/>
                 <input className="form-input" type="number" value={this.state.year} onChange={(e) => this.handleInputChange("year", e)} />
               </div>
 
               <div className="form-item">
-                <label className="form-label" for="genre">Genre</label> <br/>
+                <label className="form-label" htmlFor="genre">Genre</label> <br/>
                 <input className="form-input" type="text" value={this.state.genre} onChange={(e) => this.handleInputChange("genre", e)} />
               </div>
             </div>

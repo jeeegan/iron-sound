@@ -3,7 +3,7 @@ const { isLoggedIn } = require('../middlewares');
 const router = express.Router();
 const Upload = require("../models/Upload");
 const User = require("../models/User");
-const uploader = require('../configs/cloudinary-setup');
+const uploader = require('../configs/cloudinary-audio');
 
 router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
   const { title, artist, album, year, genre, tags, upload_url, host, upload_img, upload_type } = req.body
