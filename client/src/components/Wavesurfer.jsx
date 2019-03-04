@@ -24,7 +24,7 @@ class Wavesurfer extends Component {
       })
     }, 200)
   }
-
+  
   playButton = () => {
     this.wavesurfer.playPause();
     if (this.state.buttonimg === "/play-button-white.png") {
