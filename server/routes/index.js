@@ -25,7 +25,7 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
 
 router.get("/profile", (req, res, next) => {
   User.findOne({ _id: req.user.id })
-  .populate('_created_by')
+
   .then((data) => {
     
     res.json(data);

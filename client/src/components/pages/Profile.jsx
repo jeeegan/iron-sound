@@ -12,6 +12,7 @@ class Profile extends Component {
     })
     .catch(console.log)
   }
+
   
   render() {     
     return (
