@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Settings from './pages/Settings';
 import Upload from './pages/Upload';
 import Profile from './pages/Profile';
 import PublicProfile from './pages/PublicProfile';
@@ -71,6 +72,7 @@ class App extends Component {
             }  />
           <Route exact path="/upload" component={Upload} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/settings" component={Settings} />
           <Route path="/profile/:displayname" component={PublicProfile} />
           <Route path="/track/:trackid" component={Track} />
           <Route render={() => <h2>404</h2>} />

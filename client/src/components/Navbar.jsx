@@ -11,6 +11,7 @@ const Navbar = (props) => {
           {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
         </div>
         <div className="nav-right">
+          {api.isLoggedIn() && <NavLink to="/settings">Settings</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <NavLink to="/" onClick={(e) => 

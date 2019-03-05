@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from '../../api';
 import Wavesurfer from '../Wavesurfer';
 
-class Profile extends Component {
+class Settings extends Component {
   state = {
     user: {},
     uploads: []
@@ -65,4 +65,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default Settings;
