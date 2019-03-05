@@ -19,21 +19,37 @@ class Settings extends Component {
     
   }
 
-  handleSubmit(e) {
+  handleClick(e) {
+    console.log(this.state.user.display_name)
     e.preventDefault();
+    let formData = new FormData();
+    formData.append("display_name", this.state.user.display_name);
+    formData.append("location", this.state.user.location);
+    formData.append("bio", this.state.user.bio);
+    formData.append("sc_url", this.state.user.sc_url);
+    formData.append("bc_url", this.state.user.bc_url);
+    formData.append("yt_url", this.state.user.yt_url);
+    console.log(this.state.user)
+    console.log("***** DEBUG: formData:", formData)
+    api.update(formData)
+      .then(result => {
+        console.log('SUCCESS!')
+        this.props.history.push("/") // Redirect to the home page
+      })
+      .catch(err => this.setState({ message: err.toString() })
+    );
   }
 
   handleInputChange(stateFieldName, event) {
     this.setState({
-      user : {[stateFieldName]: event.target.value}
+      user : {...this.state.user, [stateFieldName]: event.target.value}
     });
-    console.log(this.state.user)
   }
   
   render() {     
     return (
       <div className="pageContent">
-        <form onSubmit={e => this.handleSubmit()}>
+        <form action="/update">
           <div className="form-horizontal">
 
             <div className="form-vertical">
@@ -63,7 +79,7 @@ class Settings extends Component {
               </div>
 
               <div className="form-item">
-                <label className="form-label" htmlFor="bc_url">Youtube URL</label> <br/>
+                <label className="form-label" htmlFor="yt_url">Youtube URL</label> <br/>
                 <input className="form-input" type="text" value={this.state.user.yt_url} onChange={(e) => this.handleInputChange("yt_url", e)} />
               </div>
             </div>

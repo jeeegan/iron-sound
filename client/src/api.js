@@ -59,6 +59,14 @@ export default {
       .catch(errHandler)
   },
 
+  update(formData) {
+    console.log("DEBUG formData:",formData)
+    return service
+      .post('/update', formData)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
   userData() {
     return service
       .get('/loggedin')

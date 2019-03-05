@@ -4,13 +4,15 @@ const router = express.Router();
 const Upload = require("../models/Upload");
 const User = require("../models/User");
 const uploader = require('../configs/cloudinary-audio');
+const multer = require('multer')
+const upload = multer()
 
 router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
   const { title, artist, album, year, genre, tags, upload_url, host, upload_img, upload_type } = req.body
   const newUpload = new Upload({ title, artist, album, year, genre, tags, upload_url, host, upload_img, upload_type, _created_by: req.user._id })
 
   if (req.file) {
-    newUpload.upload_img = req.file.secure_url;
+    newUpload.upload_url = req.file.secure_url;
   }
 
   newUpload.save()
@@ -21,6 +23,13 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
     console.log(error)
   })
 
+});
+
+router.post('/update', uploader.none(), (req, res, next) => {
+  const { display_name, location, bio, sc_url, bc_url, yt_url } = req.body;
+  User.updateOne({display_name: display_name}, { display_name, location, bio, sc_url, bc_url, yt_url })
+    .then(res => console.log(res))
+    .catch(err)
 });
 
 router.get("/profile", isLoggedIn, (req, res, next) => {

@@ -25,8 +25,9 @@ class Upload extends Component {
   }
 
   handleFileUpload = e => {
+    console.log(e)
     this.setState({
-      upload_url: e.target.files[0]
+      upload_url: e[0]
     })
   }
 
@@ -59,7 +60,7 @@ class Upload extends Component {
 
               <div className="form-item">
                 <label className="form-label" htmlFor="upload_url">Track Upload</label> <br/>
-                <input className="form-input" id="upload_url" type="file" onChange={(e) => this.handleFileUpload(e)} />
+                <input className="form-input" id="upload_url" type="file" onChange={(e) => this.handleFileUpload(e.target.files)} />
               </div>
               
             </div>
