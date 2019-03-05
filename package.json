@@ -4,16 +4,12 @@
   "private": true,
   "scripts": {
     "preinstall": "echo --- preinstall --- && cd server && npm install && cd ../client && npm install && npm run build && cd ..",
-    "start": "node ./bin/www",
+    "start": "cd server && npm start",
     "start-dev": "nodemon ./bin/www",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run start"
   },
   "engines": {
     "node": "8.9.4"
-  },
-  "dependencies": {
-    "wavesurfer": "^1.3.4",
-    "wavesurfer.js": "^2.1.3"
   }
 }
