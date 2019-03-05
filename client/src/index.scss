@@ -18,6 +18,10 @@ body {
   background-color: black;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .info {
   margin: 20px;
   padding: 10px 20px;
@@ -45,7 +49,8 @@ body {
     }
 
     // a.active {
-    //   font-weight: bold;
+    //   // font-weight: bold;
+    //   color: #8f2020;
     // }
     a:hover {
       color: red;
@@ -71,13 +76,10 @@ body {
 // Reusable global style classes
 
   .pageContent {
-    margin: 10vh 15vw;
+    margin: 10vh 8vw;
+    min-width: 600px;
     background-color: black;
   }
-
-  // .bg1 {
-  //   background-image: src(bg1.jpg)
-  // }
 
   // MEDIA PLAYER STYLES
   
@@ -88,8 +90,8 @@ body {
     align-items: center;
     // border: solid 1px maroon;
     padding: 0 2vw;
-    margin-bottom: -0.1vh;
-    background-image: linear-gradient(45deg, rgb(78, 9, 9), rgb(41, 41, 41));
+    // margin-bottom: -0.01vh;
+    background-image: linear-gradient( rgb(148, 148, 148), rgb(0, 0, 0));
     height: 18vh;
     padding-bottom: 3vh;
   }
@@ -99,22 +101,21 @@ body {
     flex-direction: row;
     align-items: center;
     // background-color: rgb(73, 73, 73);
-    background-image: linear-gradient(45deg, rgb(78, 9, 9), rgb(41, 41, 41));
+    // background-image: linear-gradient( rgb(0, 0, 0), rgb(148, 148, 148));
+    border: solid 2px rgb(148, 148, 148);
     margin-top: none;
   }
   .artist {
     font-size: 1.4vw;
-    color: white;
-    width: 28%;
-    margin-left: 2.85vw;
+    width: 28.5%;
+    margin-left: 2.5vw;
   }
   .album-art {
-    width: 8vw;
+    width: 7.5vw;
     height: auto;
   }
   .title {
     font-size: 1.5vw;
-    color: cornsilk;
     width: 70.5%;
   }
   .control-panel {

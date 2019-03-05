@@ -30,7 +30,7 @@ class Profile extends Component {
             <div className="profile-text">
               <h2>{this.state.user.display_name}</h2>
               <div className="location">
-                {this.state.location}
+                {this.state.user.location}
               </div>
               <div className="bio">
                 {this.state.user.bio}
