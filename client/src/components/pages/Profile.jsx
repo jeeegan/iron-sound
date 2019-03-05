@@ -68,6 +68,7 @@ class Profile extends Component {
                   identifier={upload._id} 
                   upload_url={upload.upload_url} artist={upload.artist} 
                   title={upload.title}
+                  genre={upload.genre}
                   media="media-player media-player-short"
                   trackinfo="track-info track-info-short"
                   waveform="waveform-right-small"

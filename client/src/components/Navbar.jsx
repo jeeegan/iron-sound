@@ -6,7 +6,15 @@ const Navbar = (props) => {
     return(
       <div className="navbar">
         <div className="nav-left">
-          <NavLink to="/" exact>Home</NavLink>
+          <NavLink to="/" exact><img 
+            src="/WTLogoW.png"  
+            style={{ 
+              width: '60px', 
+              height: 'auto',
+              id: 'logo',
+              margin: '-20px',
+            }} 
+            alt="logo"/></NavLink>
           {api.isLoggedIn() && <NavLink to="/upload">Add Content</NavLink>}
           {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
         </div>

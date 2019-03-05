@@ -49,8 +49,16 @@ class Wavesurfer extends Component {
     return(
       <div>
         <div className={this.props.trackinfo}>
-          <div className="artist"><Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.props.artist}`}>{this.props.artist}</Link></div>
-          <div className="title"><Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}</Link></div>
+          <div className="artist">
+            <Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.props.artist}`}>{this.props.artist}
+            </Link>
+          </div>
+          <div className="title">
+            <Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}
+            </Link>
+          </div>
+          <span className="genre">{this.props.genre}
+          </span>
         </div>
         <div className={this.props.media}>
           <div className="control-panel">          
@@ -58,7 +66,7 @@ class Wavesurfer extends Component {
               <img src={this.state.buttonimg} alt=""/>
             </button>
             <div className="media-time">
-              <p>{this.convertNumberToMinutesSeconds(this.state.currentTime)} / {this.convertNumberToMinutesSeconds(duration)}</p>
+              <p><span style={{ color: 'cornsilk' }}>{this.convertNumberToMinutesSeconds(this.state.currentTime)}</span> <span style={{ color: 'grey' }}> / </span>{this.convertNumberToMinutesSeconds(duration)}</p>
             </div>
           </div>
 

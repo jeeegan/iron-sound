@@ -96,15 +96,16 @@ body {
     // border: solid 1.4px rgb(148, 148, 148);
     // margin-top: 5px;
     height: 30px;
-    background-image: linear-gradient( to right, rgb(121, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%), url('/recordtexture3.jpg');
+    background-image: linear-gradient( to right, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%), url('/berlin2.png');
     // background-image: linear-gradient(rgb(0, 0, 0), rgb(114, 0, 0));
     background-size: cover;
+    background-position: center;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
   }
 
   .track-info-short {
-    background-image: linear-gradient( to right, rgb(121, 0, 0) 50%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 95%), url('/texture1.jpg');
+    background-image: linear-gradient( to right, rgb(121, 0, 0) 50%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 95%), url('/berlin2.jpg');
     background-position-x: 50%;
   }
 
@@ -116,6 +117,11 @@ body {
   .title {
     font-size: 20px;
   }
+  .genre {
+    align-self: flex-end;
+  }
+
+
   .control-panel {
     display: flex;
     flex-direction: column;
@@ -141,6 +147,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  .media-time {
+    font-size: 12px;
   }
 
   .waveform-right {
@@ -233,6 +243,31 @@ body {
     float: left;
     display: relative;
   }
+
+  // --------------------
+  // ANIMATION
+  #logo {
+    animation-name: logo;
+    animation-duration: 5s;
+    width: 70px;
+    height: 70px;
+  }
+
+  @keyframes logo { 
+    0% { background-color: 'white'; }
+    50% { background-color: 'red'; }
+    100% { background-color: 'white'; }
+  }
+
+  .logo {
+    background-image: linear-gradient(rgba(0, 0, 0, 1) 15%, rgba(255, 255, 255, 0)), url('/recordtexture2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    margin-bottom: -10vh;
+    padding-bottom: 25vh;
+  }
+
+
 
   // --------------------
   // Style for Track Component
