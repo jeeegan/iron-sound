@@ -75,6 +75,10 @@ body {
     background-color: black;
   }
 
+  // .bg1 {
+  //   background-image: src(bg1.jpg)
+  // }
+
   // MEDIA PLAYER STYLES
   
   .media-player {
@@ -84,6 +88,7 @@ body {
     align-items: center;
     // border: solid 1px maroon;
     padding: 0 2vw;
+    margin-bottom: -0.1vh;
     background-image: linear-gradient(45deg, rgb(78, 9, 9), rgb(41, 41, 41));
     height: 18vh;
     padding-bottom: 3vh;
