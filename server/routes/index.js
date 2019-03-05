@@ -23,7 +23,7 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
 
 });
 
-router.get("/profile", (req, res, next) => {
+router.get("/profile", isLoggedIn, (req, res, next) => {
   User.findOne({ _id: req.user.id })
   .then((user) => {
     Upload.find({_created_by: user._id})

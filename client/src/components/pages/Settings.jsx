@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import api from '../../api';
-import Wavesurfer from '../Wavesurfer';
 
 class Settings extends Component {
   state = {
@@ -19,50 +18,70 @@ class Settings extends Component {
     .catch(console.log);
     
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  handleInputChange(stateFieldName, event) {
+    this.setState({
+      user : {[stateFieldName]: event.target.value}
+    });
+    console.log(this.state.user)
+  }
   
   render() {     
     return (
       <div className="pageContent">
-      {/* USER PROFILE TEXT AND LINKS */}
-        <div className="profile-header">
-          <div className="profile-left">
-            <div className="profile-text">
-              <h2>{this.state.user.display_name}</h2>
-              <div className="location">
-                {this.state.user.location}
+        <form onSubmit={e => this.handleSubmit()}>
+          <div className="form-horizontal">
+
+            <div className="form-vertical">
+              <div className="form-item">
+                <label className="form-label" htmlFor="display_name">Display Name</label> <br/>
+                <input className="form-input" id="display_name" type="text" value={this.state.user.display_name} onChange={(e) => this.handleInputChange("display_name", e)} />
               </div>
-              <div className="bio">
-                {this.state.user.bio}
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="location">Location</label> <br/>
+                <input className="form-input" id="location" type="text" value={this.state.user.location} onChange={(e) => this.handleInputChange("location", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="bio">Bio</label> <br/>
+                <input className="form-input" id="bio" type="text" value={this.state.user.bio} onChange={(e) => this.handleInputChange("bio", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="sc_url">Soundcloud URL</label> <br/>
+                <input className="form-input" id="sc_url" type="text" value={this.state.user.sc_url} onChange={(e) => this.handleInputChange("sc_url", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="bc_url">Bandcamp URL</label> <br/>
+                <input className="form-input" type="text" value={this.state.user.bc_url} onChange={(e) => this.handleInputChange("bc_url", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="bc_url">Youtube URL</label> <br/>
+                <input className="form-input" type="text" value={this.state.user.yt_url} onChange={(e) => this.handleInputChange("yt_url", e)} />
               </div>
             </div>
-            <div className="link-icons">
-              <a href={this.state.user.sc_url} target="_blank" rel="noopener noreferrer"><img style={{width: "6vw", paddingRight: '2vw'}} src="/icon-sc.png" alt="soundcloud link"/></a> <br/>
 
-              <a href={this.state.user.bc_url} target="_blank" rel="noopener noreferrer"><img style={{width: "8vw", paddingRight: '2vw'}}src="/icon-bc.png" alt="bandcamp link"/></a>
-              <br/>
+            <div className="form-vertical">
+            <div className="form-item">
+              <div className="user-img">
+                <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
+              </div>
+              </div>
 
-              <a href={this.state.user.yt_url} target="_blank" rel="noopener noreferrer"><img style={{width: "6vw", paddingRight: '2vw'}} src="/icon-yt.png" alt="youtube link"/></a> <br/>
             </div>
           </div>
-          {/* USER IMAGE */}
-          <div className="user-img">
-            <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
-          </div>
-        </div>
-        <div>
-          {this.state.uploads && this.state.uploads.map( upload => {
-            return <Wavesurfer 
-                key={upload._id} 
-                identifier={upload._id} 
-                upload_url={upload.upload_url} artist={upload.artist} 
-                title={upload.title}
-              />
-          })}
-        </div>
 
+          <button className="form-button" onClick={(e) => this.handleClick(e)}>Update</button>
+        </form>
       </div>
-    );
-  }
+    )}
 }
 
 export default Settings;
