@@ -47,6 +47,7 @@ body {
       justify-content: space-between;
       padding: 2vh 2vw;
       margin: 0;
+      // background-color: rgb(121, 0, 0);
     }
     .nav-left {
       text-align: left;
@@ -76,23 +77,26 @@ body {
     align-items: center;
     // border: solid 1px maroon;
     padding: 0 2vw;
-    // margin-bottom: -0.01vh;
+    margin-bottom: 10px;
     background-image: linear-gradient( rgb(148, 148, 148), rgb(0, 0, 0));
     height: 18vh;
     padding-bottom: 3vh;
+
   }
  
   .track-info {
     display: flex;
-    // flex-direction: row;
     align-items: center;
     // justify-content: flex-start;
-    // background-color: rgb(73, 73, 73);
-    background-image: linear-gradient(to left, cornsilk, rgb(0, 0, 0));
-    // background-attachment: fixed; 
-    // border: solid 1.5px rgb(148, 148, 148);
-    margin-top: none;
+    background-attachment: fixed; 
+    // border: solid 1.4px rgb(148, 148, 148);
+    // margin-top: 5px;
     height: 30px;
+    background-image: linear-gradient( to right, rgb(121, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%), url('/recordtexture3.jpg');
+    // background-image: linear-gradient(rgb(0, 0, 0), rgb(114, 0, 0));
+    background-size: cover;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
   }
   .artist {
     font-size: 15px;
@@ -171,8 +175,9 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    padding: 30px;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(114, 0, 0));
+    margin-bottom: 60px;
+    // padding: 30px;
+    // background-color: rgb(73, 73, 73);
   }
 
   .link-icons {

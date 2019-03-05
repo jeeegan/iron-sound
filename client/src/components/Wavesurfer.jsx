@@ -13,7 +13,7 @@ class Wavesurfer extends Component {
     this.wavesurfer = WaveSurfer.create({
       container: '#waveform'+this.props.identifier,
       waveColor: 'Cornsilk',
-      progressColor: 'maroon',
+      progressColor: 'rgb(121, 0, 0)',
       height: '90',
       cursorColor: 'red'
     });
