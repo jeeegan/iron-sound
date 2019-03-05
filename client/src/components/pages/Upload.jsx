@@ -58,7 +58,7 @@ class Upload extends Component {
             <div className="form-vertical">
 
               <div className="form-item">
-                <label className="form-label" htmlFor="upload_url">Track Image</label> <br/>
+                <label className="form-label" htmlFor="upload_url">Track Upload</label> <br/>
                 <input className="form-input" id="upload_url" type="file" onChange={(e) => this.handleFileUpload(e)} />
               </div>
               
