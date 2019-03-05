@@ -53,7 +53,6 @@ class Wavesurfer extends Component {
           <div className="title"><Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}</Link></div>
         </div>
         <div className="media-player">
-          <img className="album-art" src="albumart.jpg" alt="album-art"/>
           <div className="control-panel">          
             <button className="play-button" onClick={this.playButton}>
               <img src={this.state.buttonimg} alt=""/>

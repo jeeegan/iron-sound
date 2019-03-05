@@ -98,25 +98,21 @@ body {
  
   .track-info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     // background-color: rgb(73, 73, 73);
-    // background-image: linear-gradient( rgb(0, 0, 0), rgb(148, 148, 148));
+    background-image: url('/texture1.jpg');
+    background-size: cover;
+    background-attachment: fixed; 
     border: solid 2px rgb(148, 148, 148);
     margin-top: none;
+    height: 20px;
   }
   .artist {
-    font-size: 1.4vw;
-    width: 28.5%;
-    margin-left: 2.5vw;
-  }
-  .album-art {
-    width: 7.5vw;
-    height: auto;
+    font-size: 12px;
   }
   .title {
-    font-size: 1.5vw;
-    width: 70.5%;
+    font-size: 14px;
   }
   .control-panel {
     display: flex;
@@ -149,7 +145,7 @@ body {
   }
 
   .waveform-right {
-    width: 70%;
+    width: 90%;
     // border: solid 2px rgb(48, 48, 48);
     // background-image: linear-gradient(45deg, rgb(0, 0, 0), rgb(112, 112, 112)); 
   }
