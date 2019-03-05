@@ -49,16 +49,33 @@ class Profile extends Component {
             <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
           </div>
         </div>
-        <div>
-          {this.state.uploads && this.state.uploads.map( upload => {
-            return <Wavesurfer 
-                key={upload._id} 
-                identifier={upload._id} 
-                upload_url={upload.upload_url} artist={upload.artist} 
-                title={upload.title}
-              />
-          })}
+        <div className="profile-container">
+          <div style={{flexGrow: '1'}}>
+            <div className="profile-container-right">
+              <h5>Youtube</h5>
+              <iframe title="wiring the waves" width="560" height="315" src="https://www.youtube.com/embed/S6QDIW_FzQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
+              <iframe title="bia 2" width="560" height="315" src="https://www.youtube.com/embed/gPkli_80jsM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            </div>
+          </div>
+
+          <div style={{flexGrow: '4'}}>
+            <h5>Audio Uploads</h5> <br/>
+            {this.state.uploads && this.state.uploads.map( upload => {
+              return <Wavesurfer 
+                  key={upload._id} 
+                  identifier={upload._id} 
+                  upload_url={upload.upload_url} artist={upload.artist} 
+                  title={upload.title}
+                  media="media-player media-player-short"
+                  trackinfo="track-info track-info-short"
+                  waveform="waveform-right-small"
+                />
+            })}
+          </div>
         </div>
+        
 
       </div>
     );

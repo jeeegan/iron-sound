@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
+import Wavesurfer from '../Wavesurfer';
 
 class Track extends Component {
   state = {}
@@ -16,11 +17,19 @@ class Track extends Component {
   render() {     
     return (
       <div className="pageContent">
-        <h3>Track info:</h3>
-          {this.state.title}<br/>
-          {this.state.artist}<br/>
-          {this.state.album}<br/>
-          {this.state.genre}<br/>
+        <div>
+        <h3>{this.state.title}</h3><br/>
+        </div>
+        <Wavesurfer 
+            key={this.state._id} 
+            identifier={this.state._id} 
+            upload_url={this.state.upload_url} 
+            artist={this.state.artist} 
+            title={this.state.title}
+            media="media-player"
+            trackinfo="track-info"
+            waveform="waveform-right"
+          />  
       </div>
     );
   }

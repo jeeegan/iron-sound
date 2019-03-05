@@ -48,11 +48,11 @@ class Wavesurfer extends Component {
     let duration = this.wavesurfer && this.wavesurfer.getDuration()
     return(
       <div>
-        <div className="track-info">
+        <div className={this.props.trackinfo}>
           <div className="artist"><Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.props.artist}`}>{this.props.artist}</Link></div>
           <div className="title"><Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}</Link></div>
         </div>
-        <div className="media-player">
+        <div className={this.props.media}>
           <div className="control-panel">          
             <button className="play-button" onClick={this.playButton}>
               <img src={this.state.buttonimg} alt=""/>
@@ -62,7 +62,7 @@ class Wavesurfer extends Component {
             </div>
           </div>
 
-          <div className="waveform-right" id={`waveform${this.props.identifier}`}></div>
+          <div className={this.props.waveform} id={`waveform${this.props.identifier}`}></div>
         </div>
       </div>
     )
