@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WaveSurfer from 'wavesurfer.js';
+import { Link } from 'react-router-dom';
 
 class Wavesurfer extends Component {
   state = {
@@ -48,8 +49,8 @@ class Wavesurfer extends Component {
     return(
       <div>
         <div className="track-info">
-          <div className="artist">{this.props.artist}</div>
-          <div className="title">{this.props.title}</div>
+          <div className="artist"><Link to={`/profile/${this.props.artist}`}>{this.props.artist}</Link></div>
+          <div className="title"><Link to={`/track/${this.props.identifier}`}>{this.props.title}</Link></div>
         </div>
         <div className="media-player">
           <img className="album-art" src="albumart.jpg" alt="album-art"/>

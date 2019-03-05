@@ -5,7 +5,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Upload from './pages/Upload';
 import Profile from './pages/Profile';
+import PublicProfile from './pages/PublicProfile';
 import Navbar from './Navbar';
+import Track from './pages/Track';
 import api from '../api';
 
 class App extends Component {
@@ -63,12 +65,14 @@ class App extends Component {
           <Route path="/" exact render={() =>
               <Home userData={this.state.homeState} uploads={this.state.homeUploads }/>
             } />
-          <Route path="/signup" component={Signup} />
-          <Route path="/login" render={() =>
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" render={() =>
               <Login loggedIn={this.loggedIn} />
             }  />
-          <Route path="/upload" component={Upload} />
-          <Route path="/profile" component={Profile} />
+          <Route exact path="/upload" component={Upload} />
+          <Route exact path="/profile" component={Profile} />
+          <Route path="/profile/:displayname" component={PublicProfile} />
+          <Route path="/track/:trackid" component={Track} />
           <Route render={() => <h2>404</h2>} />
         </Switch>
       </div>

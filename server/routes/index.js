@@ -26,7 +26,6 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
 router.get("/profile", (req, res, next) => {
   User.findOne({ _id: req.user.id })
   .then((user) => {
-    console.log(user)
     Upload.find({_created_by: user._id})
     .then(uploads => {
       res.json({
@@ -39,6 +38,32 @@ router.get("/profile", (req, res, next) => {
     console.log(error)
   })
 });
+
+router.get("/profile/:displayname", (req, res, next) => {
+  User.findOne({ display_name: req.params.displayname })
+    .then((user) => {
+      Upload.find({_created_by: user._id})
+      .then(uploads => {
+        res.json({
+          user: user,
+          uploads: uploads
+        });
+      })
+    })
+    .catch(error => {
+      console.log(error)
+    })
+});
+
+router.get("/track/:id", (req, res, next) => {
+  Upload.findOne({ _id: req.params.id})
+    .then(track => {
+      res.json(track)
+    })
+    .catch(error => {
+      console.log(error)
+  })
+})
 
 router.get("/", (req, res, next) => {
   Upload.find()

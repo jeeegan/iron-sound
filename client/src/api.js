@@ -77,6 +77,24 @@ export default {
       .catch(errHandler);
   },
 
+  getProfileByDisplayName(displayName) {
+    return service
+      .get(`/profile/${displayName}`)
+      .then(res => {
+        return res.data;
+      })
+      .catch(errHandler);
+  },
+
+  getTrack(trackID) {
+    return service
+      .get(`/track/${trackID}`)
+      .then(res => {
+        return res.data;
+      })
+      .catch(errHandler);
+  },
+
   getUploadData() {
     return service
       .get('/')
