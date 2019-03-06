@@ -53,11 +53,8 @@ class Profile extends Component {
           <div style={{flexGrow: '1'}}>
             <div className="profile-container-right">
               <h5>Youtube</h5>
-              <div>{this.state.user.yt_embed_1}</div>
-              <div>{this.state.user.yt_embed_2}</div>
-              
-              <iframe title="bia 2" width="560" height="315" src="https://www.youtube.com/embed/gPkli_80jsM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+              <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_1}} />
+              <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_2}} />
             </div>
           </div>
 
