@@ -60,9 +60,8 @@ export default {
   },
 
   update(formData) {
-    console.log("DEBUG formData:",formData)
     return service
-      .post('/update', formData)
+      .put('/update', formData)
       .then(res => res.data)
       .catch(errHandler)
   },

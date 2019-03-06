@@ -25,11 +25,11 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
 
 });
 
-router.post('/update', uploader.none(), (req, res, next) => {
+router.put('/update', uploader.none(), (req, res, next) => {
   const { display_name, location, bio, sc_url, bc_url, yt_url } = req.body;
   User.updateOne({display_name: display_name}, { display_name, location, bio, sc_url, bc_url, yt_url })
     .then(res => console.log(res))
-    .catch(err)
+    .catch(console.log)
 });
 
 router.get("/profile", isLoggedIn, (req, res, next) => {

@@ -20,7 +20,6 @@ class Settings extends Component {
   }
 
   handleClick(e) {
-    console.log(this.state.user.display_name)
     e.preventDefault();
     let formData = new FormData();
     formData.append("display_name", this.state.user.display_name);
@@ -29,8 +28,6 @@ class Settings extends Component {
     formData.append("sc_url", this.state.user.sc_url);
     formData.append("bc_url", this.state.user.bc_url);
     formData.append("yt_url", this.state.user.yt_url);
-    console.log(this.state.user)
-    console.log("***** DEBUG: formData:", formData)
     api.update(formData)
       .then(result => {
         console.log('SUCCESS!')
@@ -54,8 +51,7 @@ class Settings extends Component {
 
             <div className="form-vertical">
               <div className="form-item">
-                <label className="form-label" htmlFor="display_name">Display Name</label> <br/>
-                <input className="form-input" id="display_name" type="text" value={this.state.user.display_name} onChange={(e) => this.handleInputChange("display_name", e)} />
+                <h2>{this.state.user.display_name}</h2>
               </div>
 
               <div className="form-item">
