@@ -43,7 +43,7 @@ class Signup extends Component {
     formData.append("custom_url", this.state.custom_url);
     formData.append("bio", this.state.bio);
     formData.append("location", this.state.location);
-    formData.append("user_img", this.state.user_img);
+    this.state.user_img && formData.append("user_img", this.state.user_img);
     api.signup(formData)
       .then(result => {
         console.log('SUCCESS!')

@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 router.post("/signup", uploader.single("user_img"), (req, res, next) => {
-  const { password, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, location } = req.body;
+  const { password, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, location, user_img } = req.body;
 
   if (req.file) {
     user_img = req.file.secure_url;

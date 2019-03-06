@@ -19,7 +19,7 @@ class Settings extends Component {
     
   }
 
-  handleClick(e) {
+  handleUpdateClick(e) {
     e.preventDefault();
     let formData = new FormData();
     formData.append("display_name", this.state.user.display_name);
@@ -34,6 +34,15 @@ class Settings extends Component {
       })
       .catch(err => this.setState({ message: err.toString() })
     );
+  }
+
+  handleDeleteClick(e) {
+    e.preventDefault()
+    api.deleteUser()
+      .then(res => {
+        api.logout();
+        this.props.history.push('/');
+      })
   }
 
   handleInputChange(stateFieldName, event) {
@@ -89,7 +98,13 @@ class Settings extends Component {
             </div>
           </div>
 
-          <button className="form-button" onClick={(e) => this.handleClick(e)}>Update</button>
+          <button className="form-button" onClick={(e) => this.handleUpdateClick(e)}>Update</button>
+        </form>
+
+        <form action="/update">
+          <div className="form-horizontal">
+            <button className="form-button" onClick={(e) => this.handleDeleteClick(e)}>Delete Account</button>
+          </div>
         </form>
       </div>
     )}

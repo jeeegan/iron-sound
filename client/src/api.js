@@ -66,6 +66,13 @@ export default {
       .catch(errHandler)
   },
 
+  deleteUser() {
+    return service
+      .delete('/profile/delete')
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
   userData() {
     return service
       .get('/loggedin')

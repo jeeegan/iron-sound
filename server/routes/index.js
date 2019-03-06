@@ -32,6 +32,12 @@ router.put('/update', uploader.none(), (req, res, next) => {
     .catch(console.log)
 });
 
+router.delete('/profile/delete', isLoggedIn, (req, res, next) => {
+  User.deleteOne({_id: req.user.id})
+  .then(data =>  res.json(data))
+  .catch(console.log)
+});
+
 router.get("/profile", isLoggedIn, (req, res, next) => {
   User.findOne({ _id: req.user.id })
   .then((user) => {
