@@ -4,7 +4,19 @@ const router = express.Router();
 const Upload = require("../models/Upload");
 const User = require("../models/User");
 const uploader = require('../configs/cloudinary-audio');
-const multer = require('multer')
+const uploaderImage = require('../configs/cloudinary-image');
+
+router.put("/upload-track-image", uploaderImage.single("track_img"), (req, res, next) => {
+  const { album } = req.body;
+
+  if (req.file) {
+    track_img = req.file.secure_url;
+  }
+
+  Upload.updateMany({ album: album }, {track_img})
+    .then(data => res.json(data))
+    .catch(err => console.log(err));
+});
 
 router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
   const { title, artist, album, year, genre, upload_url, host, upload_img, upload_type } = req.body;

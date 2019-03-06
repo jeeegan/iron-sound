@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import PublicProfile from './pages/PublicProfile';
 import Navbar from './Navbar';
 import Track from './pages/Track';
+import Album from './pages/Album';
 import api from '../api';
 
 class App extends Component {
@@ -75,6 +76,7 @@ class App extends Component {
           <Route exact path="/settings" component={Settings} />
           <Route exact path="/profile/:displayname" component={PublicProfile} />
           <Route exact path="/track/:trackid" component={Track} />
+          <Route exact path="/album/:name" component={Album} />
           <Route render={() => <h2>404</h2>} />
         </Switch>
         <footer>Copyright © 2019 Waveterminal   |   Made in Berlin</footer>

@@ -6,19 +6,18 @@ const service = axios.create({
 })
 
 const errHandler = err => {
-  console.error(err)
   if (err.response && err.response.data) {
-    console.error("API response", err.response.data)
-    throw err.response.data.message
+    console.error("API response", err.response.data);
+    throw err.response.data.message;
   }
-  throw err
+  throw err;
 }
 
 export default {
   service: service,
 
   isLoggedIn() {
-    return localStorage.getItem('user') != null
+    return localStorage.getItem('user') != null;
   },
 
   signup(formData) {
@@ -26,10 +25,10 @@ export default {
       .post('/signup', formData)
       .then(res => {
         // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
-        localStorage.setItem('user', JSON.stringify(res.data))
-        return res.data
+        localStorage.setItem('user', JSON.stringify(res.data));
+        return res.data;
       })
-      .catch(errHandler)
+      .catch(errHandler);
   },
 
   login(email, password) {
@@ -40,30 +39,39 @@ export default {
       })
       .then(res => {
         // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
-        localStorage.setItem('user', JSON.stringify(res.data))
-        return res.data
+        localStorage.setItem('user', JSON.stringify(res.data));
+        return res.data;
       })
-      .catch(errHandler)
+      .catch(errHandler);
   },
 
   logout() {
     localStorage.removeItem('user')
     return service
       .get('/logout')
+      .then(res => res.data)
+      .catch(errHandler);
   },
 
   upload(formData) {
     return service
       .post('/upload', formData)
       .then(res => res.data)
-      .catch(errHandler)
+      .catch(errHandler);
+  },
+
+  uploadTrackImage(formData) {
+    return service
+      .put('/upload-track-image', formData)
+      .then(res => res.data)
+      .catch(errHandler);
   },
 
   update(formData) {
     return service
       .put('/update', formData)
       .then(res => res.data)
-      .catch(errHandler)
+      .catch(errHandler);
   },
 
   deleteUser() {
@@ -76,54 +84,49 @@ export default {
   deleteTrack(trackId) {
     return service
       .delete(`/track/delete/${trackId}`)
-      .then(res => {
-        return res.data;
-      })
+      .then(res => res.data)
       .catch(errHandler);
   },
 
   userData() {
     return service
       .get('/loggedin')
-      .then(res => {
-        return res.data
-      })
-      .catch(errHandler)
+      .then(res => res.data)
+      .catch(errHandler);
   },
 
   getProfile() {
     return service
       .get('/profile')
-      .then(res => {
-        return res.data;
-      })
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
+  getAlbum(name) {
+    return service
+      .get(`/album/${name}`)
+      .then(res => res.data)
       .catch(errHandler);
   },
 
   getProfileByDisplayName(displayName) {
     return service
       .get(`/profile/${displayName}`)
-      .then(res => {
-        return res.data;
-      })
+      .then(res => res.data)
       .catch(errHandler);
   },
 
   getTrack(trackID) {
     return service
       .get(`/track/${trackID}`)
-      .then(res => {
-        return res.data;
-      })
+      .then(res => res.data)
       .catch(errHandler);
   },
 
   getUploadData() {
     return service
       .get('/')
-      .then(res => {
-        return res.data
-      })
+      .then(res => res.data)
       .catch(errHandler)
   },
 

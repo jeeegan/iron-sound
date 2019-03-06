@@ -22,6 +22,7 @@ const uploadSchema = new Schema({
     required: true, 
     match: /^https?\:\/\// // Must start by "http://" or "https://" }
   },
+  track_img: String,
   _created_by: {
     type: Schema.Types.ObjectId,
     ref: 'User'
