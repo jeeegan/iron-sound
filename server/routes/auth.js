@@ -44,7 +44,7 @@ router.get('/loggedin', (req, res, next) => {
     res.status(200).json(req.user);
   }
   else {
-    next({ status: 403, message: 'Unauthorized' });
+    res.json({});
   }
 });
 

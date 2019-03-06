@@ -35,12 +35,12 @@ class Login extends Component {
         <h2>Login</h2>
         <form className="form-vertical">
           <div>
-            <label className="form-label" for="email">Email</label> <br/>
+            <label className="form-label" htmlFor="email">Email</label> <br/>
             <input className="form-input" id="email" type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> 
           </div>
 
           <div>
-            <label className="form-label" for="password">Password</label> <br/>
+            <label className="form-label" htmlFor="password">Password</label> <br/>
             <input className="form-input" id="password" type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> 
           </div>
           
