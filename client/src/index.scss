@@ -91,6 +91,7 @@ body {
   .track-info {
     display: flex;
     align-items: center;
+    flex-direction: row;
     // justify-content: flex-start;
     background-attachment: fixed; 
     // border: solid 1.4px rgb(148, 148, 148);
@@ -102,6 +103,7 @@ body {
     background-position: center;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
+    width: 100%;
   }
 
   .track-info-short {
@@ -112,15 +114,17 @@ body {
   .artist {
     font-size: 15px;
     margin-left: 2vw;
-    margin-right: 2vw;
+    margin-right: 5vw;
   }
+  .artist-short {
+    font-size: 15px;
+    margin-left: 2vw;
+    margin-right:2.3vw;
+  }
+
   .title {
     font-size: 20px;
   }
-  .genre {
-    align-self: flex-end;
-  }
-
 
   .control-panel {
     display: flex;

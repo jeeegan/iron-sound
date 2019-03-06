@@ -49,7 +49,7 @@ class Wavesurfer extends Component {
     return(
       <div>
         <div className={this.props.trackinfo}>
-          <div className="artist">
+          <div className={this.props.artistclass}>
             <Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.props.artist}`}>{this.props.artist}
             </Link>
           </div>
@@ -57,8 +57,6 @@ class Wavesurfer extends Component {
             <Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}
             </Link>
           </div>
-          <span className="genre">{this.props.genre}
-          </span>
         </div>
         <div className={this.props.media}>
           <div className="control-panel">          

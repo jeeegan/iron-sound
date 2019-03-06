@@ -26,6 +26,7 @@ class Home extends Component {
               media="media-player"
               trackinfo="track-info"
               waveform="waveform-right"
+              artistclass="artist"
             />
           })}
         </div>
