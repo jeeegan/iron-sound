@@ -30,8 +30,7 @@ class Settings extends Component {
     formData.append("yt_url", this.state.user.yt_url);
     api.update(formData)
       .then(result => {
-        console.log('SUCCESS!')
-        this.props.history.push("/") // Redirect to the home page
+        this.props.history.push(`/profile`) // Redirect to the home page
       })
       .catch(err => this.setState({ message: err.toString() })
     );
