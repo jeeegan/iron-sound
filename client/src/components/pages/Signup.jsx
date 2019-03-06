@@ -43,10 +43,12 @@ class Signup extends Component {
     formData.append("custom_url", this.state.custom_url);
     formData.append("bio", this.state.bio);
     formData.append("location", this.state.location);
+    formData.append("yt_embed_1", this.state.yt_embed_1);
+    formData.append("yt_embed_2", this.state.yt_embed_2);
+    formData.append("extendedBio", this.state.extendedBio);
     this.state.user_img && formData.append("user_img", this.state.user_img);
     api.signup(formData)
       .then(result => {
-        console.log('SUCCESS!')
         this.props.history.push("/") // Redirect to the home page
       })
       .catch(err => this.setState({ message: err.toString() }))
@@ -63,8 +65,11 @@ class Signup extends Component {
           Bandcamp URL: <input type="text" value={this.state.bc_url} onChange={(e) => this.handleInputChange("bc_url", e)} /> <br />
           SoundCloud URL: <input type="text" value={this.state.sc_url} onChange={(e) => this.handleInputChange("sc_url", e)} /> <br />
           YouTube URL: <input type="text" value={this.state.yt_url} onChange={(e) => this.handleInputChange("yt_url", e)} /> <br />
+          YouTube iFrame 1: <input type="text" value={this.state.yt_embed_1} onChange={(e) => this.handleInputChange("yt_embed_1", e)} /> <br />
+          YouTube iFrame 2: <input type="text" value={this.state.yt_embed_2} onChange={(e) => this.handleInputChange("yt_embed_2", e)} /> <br />
           Personal Website URL: <input type="text" value={this.state.custom_url} onChange={(e) => this.handleInputChange("custom_url", e)} /> <br />
-          Bio: <input type="text" value={this.state.bio} onChange={(e) => this.handleInputChange("bio", e)} /> <br />
+          Short Bio: <input type="text" value={this.state.bio} onChange={(e) => this.handleInputChange("bio", e)} /> <br />
+          Extended Bio: <input type="text" value={this.state.extendedBio} onChange={(e) => this.handleInputChange("extendedBio", e)} /> <br />
           Location: <input type="text" value={this.state.location} onChange={(e) => this.handleInputChange("location", e)} /> <br />
           Profile Picture: <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
 

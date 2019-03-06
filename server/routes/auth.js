@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 router.post("/signup", uploader.single("user_img"), (req, res, next) => {
-  const { password, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, location, user_img } = req.body;
+  const { password, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, location, yt_embed_1, yt_embed_2, extendedBio } = req.body;
 
   if (req.file) {
     user_img = req.file.secure_url;
@@ -23,7 +23,7 @@ router.post("/signup", uploader.single("user_img"), (req, res, next) => {
       }
       const salt = bcrypt.genSaltSync(bcryptSalt);
       const hashPass = bcrypt.hashSync(password, salt);
-      const newUser = new User({ password: hashPass, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, user_img, location });
+      const newUser = new User({ password: hashPass, email, display_name, bc_url, sc_url, yt_url, custom_url, bio, user_img, location,  yt_embed_1, yt_embed_2, extendedBio});
       return newUser.save();
     })
     .then(userSaved => {

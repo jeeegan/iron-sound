@@ -13,13 +13,10 @@ const uploadSchema = new Schema({
   album: String,
   year: { 
     type: Number, 
-    required: true 
   },
   genre: { 
     type: String, 
-    required: true 
   },
-  tags: [String],
   upload_url: { 
     type: String, 
     required: true, 

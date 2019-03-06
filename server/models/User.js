@@ -26,11 +26,18 @@ const userSchema = new Schema({
     type: String,
     match: /^https?\:\/\// // Must start by "http://" or "https://"
   },
+  yt_embed_1: {
+    type: String,
+  },
+  yt_embed_2: {
+    type: String,
+  },
   custom_url: {
     type: String,
     match: /^https?\:\/\// // Must start by "http://" or "https://"
   },
   bio: String,
+  extendedBio: String,
   location: String,
   user_img: String,
 }, {

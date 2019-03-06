@@ -31,6 +31,7 @@ class Settings extends Component {
     formData.append("sc_url", this.state.user.sc_url);
     formData.append("bc_url", this.state.user.bc_url);
     formData.append("yt_url", this.state.user.yt_url);
+    formData.append("_id", this.state.user._id);
     api.update(formData)
       .then(result => {
         this.props.history.push(`/profile`) // Redirect to the home page
@@ -70,7 +71,8 @@ class Settings extends Component {
 
             <div className="form-vertical">
               <div className="form-item">
-                <h2>{this.state.user.display_name}</h2>
+                <label className="form-label" htmlFor="display_name">Display Name</label> <br/>
+                <input className="form-input" id="display_name" type="text" value={this.state.user.display_name} onChange={(e) => this.handleInputChange("display_name", e)} />
               </div>
 
               <div className="form-item">
