@@ -8,6 +8,10 @@ class Settings extends Component {
   }
 
   componentDidMount() {
+    this.updateInfo();
+  }
+
+  updateInfo() {
     api.getProfile()
     .then(res => {
       this.setState({
@@ -16,7 +20,6 @@ class Settings extends Component {
       });
     })
     .catch(console.log);
-    
   }
 
   handleUpdateClick(e) {
@@ -49,6 +52,14 @@ class Settings extends Component {
     this.setState({
       user : {...this.state.user, [stateFieldName]: event.target.value}
     });
+  }
+
+  handleTrackDelete(e, trackId) {
+    e.preventDefault();
+    api.deleteTrack(trackId)
+      .then( res => {
+        this.updateInfo();
+      })
   }
   
   render() {     
@@ -88,16 +99,20 @@ class Settings extends Component {
               </div>
             </div>
 
-            <div className="form-vertical">
+          <div className="form-vertical">
             <div className="form-item">
               <div className="user-img">
                 <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
               </div>
-              </div>
+            </div>
+            <h3>Track List</h3>
+            <div className="form-item">
+              {this.state.uploads.map(upload => <div key={upload._id}><span>{upload.title}  </span><button onClick={(e) => this.handleTrackDelete(e, upload._id)}>DELETE</button></div>)}
+            </div>
 
             </div>
           </div>
-
+          
           <button className="form-button" onClick={(e) => this.handleUpdateClick(e)}>Update</button>
         </form>
 

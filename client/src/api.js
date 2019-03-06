@@ -73,6 +73,15 @@ export default {
       .catch(errHandler)
   },
 
+  deleteTrack(trackId) {
+    return service
+      .delete(`/track/delete/${trackId}`)
+      .then(res => {
+        return res.data;
+      })
+      .catch(errHandler);
+  },
+
   userData() {
     return service
       .get('/loggedin')

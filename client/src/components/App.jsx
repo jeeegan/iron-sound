@@ -73,8 +73,8 @@ class App extends Component {
           <Route exact path="/upload" component={Upload} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/settings" component={Settings} />
-          <Route path="/profile/:displayname" component={PublicProfile} />
-          <Route path="/track/:trackid" component={Track} />
+          <Route exact path="/profile/:displayname" component={PublicProfile} />
+          <Route exact path="/track/:trackid" component={Track} />
           <Route render={() => <h2>404</h2>} />
         </Switch>
       </div>
