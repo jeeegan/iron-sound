@@ -49,7 +49,6 @@ class Signup extends Component {
     this.state.user_img && formData.append("user_img", this.state.user_img);
     api.signup(formData)
       .then(result => {
-        console.log('SUCCESS!')
         this.props.history.push("/") // Redirect to the home page
       })
       .catch(err => this.setState({ message: err.toString() }))

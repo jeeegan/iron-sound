@@ -41,7 +41,6 @@ class Upload extends Component {
     formData.append("upload_url", this.state.upload_url);
     api.upload(formData)
       .then(result => {
-        console.log('SUCCESS!')
         this.props.history.push("/") // Redirect to the home page
       })
       .catch(err => this.setState({ message: err.toString() })
