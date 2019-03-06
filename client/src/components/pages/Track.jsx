@@ -35,10 +35,10 @@ class Track extends Component {
   render() {     
     return (
       <div className="pageContent">
-      <form className="form-vertical">
-          <img src={this.state.track_img}/>
-          Upload Image: <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
 
+      <form className="form-vertical">
+          {this.state.track_img && <img alt="track cover"src={this.state.track_img}/>}
+          <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
           <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
         </form>
         <div>

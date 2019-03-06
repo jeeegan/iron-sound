@@ -19,7 +19,7 @@ class Album extends Component {
     return (
       <div className="pageContent">
         <div>
-          <img src={this.state.tracks && this.state.tracks[0].track_img}/>
+          <img alt="track cover" src={this.state.tracks && this.state.tracks[0].track_img}/>
         </div>
         <div>
           {this.state.tracks && this.state.tracks.map( (track) => {
