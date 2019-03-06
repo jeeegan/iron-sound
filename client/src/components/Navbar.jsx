@@ -15,8 +15,8 @@ const Navbar = (props) => {
               margin: '-20px',
             }} 
             alt="logo"/></NavLink>
-          {api.isLoggedIn() && <NavLink to="/upload">Add Content</NavLink>}
-          {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
+          {api.isLoggedIn() && <NavLink to="/upload">Upload</NavLink>}
+          {api.isLoggedIn() && <NavLink to="/profile">My Profile</NavLink>}
         </div>
         <div className="nav-right">
           {api.isLoggedIn() && <NavLink to="/settings">Settings</NavLink>}

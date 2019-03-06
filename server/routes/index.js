@@ -43,6 +43,12 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
     .catch(err => console.log(err));
 });
 
+router.get("/album/:name", (req, res, next) => {
+  Upload.find({album: req.params.name})
+    .then(data => res.json(data))
+    .catch(err => console.log(err));
+});
+
 router.get("/profile/:displayname", (req, res, next) => {
   User.findOne({ display_name: req.params.displayname })
     .then((user) => {
