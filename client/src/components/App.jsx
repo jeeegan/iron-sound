@@ -77,6 +77,7 @@ class App extends Component {
           <Route exact path="/track/:trackid" component={Track} />
           <Route render={() => <h2>404</h2>} />
         </Switch>
+        <footer>Copyright © 2019 Waveterminal   |   Made in Berlin</footer>
       </div>
     );
   }

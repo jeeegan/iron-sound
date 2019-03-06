@@ -7,8 +7,8 @@ const uploader = require('../configs/cloudinary-audio');
 const multer = require('multer')
 
 router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
-  const { title, artist, album, year, genre, tags, upload_url, host, upload_img, upload_type } = req.body;
-  const newUpload = new Upload({ title, artist, album, year, genre, tags, upload_url, host, upload_img, upload_type, _created_by: req.user._id });
+  const { title, artist, album, year, genre, upload_url, host, upload_img, upload_type } = req.body;
+  const newUpload = new Upload({ title, artist, album, year, genre, upload_url, host, upload_img, upload_type, _created_by: req.user._id });
 
   if (req.file) {
     newUpload.upload_url = req.file.secure_url;
@@ -16,20 +16,20 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
 
   newUpload.save()
     .then(data => res.json(data))
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 router.put('/update', uploader.none(), (req, res, next) => {
-  const { display_name, location, bio, sc_url, bc_url, yt_url } = req.body;
-  User.updateOne({display_name: display_name}, { display_name, location, bio, sc_url, bc_url, yt_url })
+  const { _id, display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio } = req.body;
+  User.updateOne({_id: _id}, { display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio })
     .then(data => res.json(data))
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 router.delete('/profile/delete', isLoggedIn, (req, res, next) => {
   User.deleteOne({_id: req.user.id})
     .then(data =>  res.json(data))
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
@@ -40,7 +40,7 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
         res.json({ user: user, uploads: uploads});
     });
   })
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 router.get("/profile/:displayname", (req, res, next) => {
@@ -51,25 +51,25 @@ router.get("/profile/:displayname", (req, res, next) => {
           res.json({user: user, uploads: uploads});
     });
   })
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 router.get("/track/:id", (req, res, next) => {
   Upload.findOne({ _id: req.params.id})
     .then(data => res.json(data))
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 router.delete("/track/delete/:id", (req, res, next) => {
   Upload.deleteOne({_id: req.params.id})
     .then(data => res.json(data))
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 router.get("/", (req, res, next) => {
   Upload.find()
     .then((data) => res.json(data))
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

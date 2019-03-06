@@ -10,7 +10,6 @@ class Upload extends Component {
       album: "",
       year: "",
       genre: "",
-      tags: [],
       upload_url: "",
       host: 'bc',
       upload_img: null,
@@ -39,7 +38,6 @@ class Upload extends Component {
     formData.append("album", this.state.album);
     formData.append("year", this.state.year);
     formData.append("genre", this.state.genre);
-    formData.append("tags", this.state.tags);
     formData.append("upload_url", this.state.upload_url);
     api.upload(formData)
       .then(result => {
