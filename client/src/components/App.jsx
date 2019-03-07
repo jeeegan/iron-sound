@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Navbar loggedOut={this.loggedOut} />
+          <Navbar userData={this.state.homeState} loggedOut={this.loggedOut} />
         </header>
         <Switch>
           <Route path="/" exact render={() =>

@@ -21,6 +21,13 @@ const Navbar = (props) => {
           {api.isLoggedIn() && <NavLink to="/upload"><img src="/icon-upload-button-white.png" alt="add" style={{ width: '30px', height: 'auto' }}/></NavLink>}
           {api.isLoggedIn() && <NavLink to="/profile"><img src="/icon-profile-button-white.png" alt="profile" style={{ width: '30px', height: 'auto' }}/></NavLink>}
         </div>
+
+        <div style={{ marginLeft: '55%', color: 'cornsilk', font: 'sans-serif' }}>
+          {api.isLoggedIn() && <div>
+          {props.userData.display_name}
+          </div>}  
+        </div>
+
         <div className="nav-right">
           {api.isLoggedIn() && <NavLink to="/settings"><img src="/icon-settings-button-white.png" alt="profile" style={{ width: '30px', height: 'auto' }}/></NavLink>}
           {!api.isLoggedIn() && <NavLink to="/signup"><img src="/icon-signup.png" alt="profile" style={{ width: '30px', height: 'auto' }}/></NavLink>}
