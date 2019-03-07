@@ -43,10 +43,14 @@ class Profile extends Component {
               <a href={this.state.user.yt_url} target="_blank" rel="noopener noreferrer"><img style={{width: "6vw", paddingRight: '2vw'}} src="/icon-yt.png" alt="youtube link"/></a> <br/>
             </div>
           </div>
-          {/* USER IMAGE */}
-          <div className="user-img">
-            <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
-          </div>
+          {this.state.user.user_img
+            ? 
+              <div className="user-img">
+                <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
+              </div>
+            :
+              null
+          }
         </div>
         <div className="profile-container">
           <div style={{flexGrow: '1'}}>

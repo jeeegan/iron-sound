@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
 import Wavesurfer from '../Wavesurfer';
-import { Link } from 'react-router-dom';
 
 class Track extends Component {
   state = {

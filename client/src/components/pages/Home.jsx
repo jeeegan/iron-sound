@@ -31,7 +31,7 @@ class Home extends Component {
               album={upload.album} 
               albumClass='album'
               title={upload.title}
-              genre={upload.genre}
+              //genre={upload.genre}
               media="media-player"
               trackinfo="track-info"
               waveform="waveform-right"

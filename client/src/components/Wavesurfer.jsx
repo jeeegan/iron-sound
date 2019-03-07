@@ -72,7 +72,7 @@ class Wavesurfer extends Component {
   render() {
 
     let isLoaded = this.state.duration > 0
-    
+    console.log("line 75",this.state.isPlaying)
     return(
       <div onClick={this.handleClick}>
         <div className='track-info-container'>
@@ -95,14 +95,14 @@ class Wavesurfer extends Component {
         <div className={this.props.media}>
           <div className="control-panel">          
             <button className="play-button" onClick={this.playButton}>
-              <img src={(this.state.isPlaying ? "pause" : "play") + "-button-white.png"} alt=""/>
+              <img src={(this.state.isPlaying ? "/pause" : "/play") + "-button-white.png"} alt=""/>
             </button>
             <div className="media-time">
               <p><span style={{ color: 'cornsilk' }}>{this.convertNumberToMinutesSeconds(this.state.currentTime)}</span> <span style={{ color: 'grey' }}> / </span>{this.convertNumberToMinutesSeconds(this.state.duration)}</p>
             </div>
           </div>
 
-          {!isLoaded && <div><div className="loader"/>  Loading...</div>}
+          {/* {!isLoaded && <div><div className="loader"/>  Loading...</div>} */}
 
           <div className={this.props.waveform} id={`waveform${this.props.identifier}`}>
           </div>
