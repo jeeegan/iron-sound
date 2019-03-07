@@ -94,11 +94,10 @@ footer {
     height: 14vh;
   }
  
-  .track-info {
+  .track-info-container {
     display: flex;
-    align-items: center;
     flex-direction: row;
-    // justify-content: flex-start;
+    justify-content: space-between;
     background-attachment: fixed; 
     // border: solid 1.4px rgb(148, 148, 148);
     // margin-top: 5px;
@@ -110,6 +109,13 @@ footer {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     width: 100%;
+  }
+
+  .track-info {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    // justify-content: flex-start;
   }
 
   .track-info-short {
@@ -190,7 +196,7 @@ footer {
     flex-direction: row;
     justify-content: flex-start;
   }
-  
+
   .track-art {
     width: 25%;
     height: auto;
