@@ -102,7 +102,7 @@ class Wavesurfer extends Component {
             </div>
           </div>
 
-          {/* {!isLoaded && <div><div className="loader"/>  Loading...</div>} */}
+          {!isLoaded && <div><div className="loader"/>  Loading...</div>}
 
           <div className={this.props.waveform} id={`waveform${this.props.identifier}`}>
           </div>
