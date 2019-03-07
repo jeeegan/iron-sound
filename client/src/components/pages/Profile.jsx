@@ -60,19 +60,23 @@ class Profile extends Component {
         </div>
 
         <div className="profile-container">
-          {
-            console.log(this.state.user.yt_embed_1, this.state.user.yt_embed_2)
-          }
-          <div style={{flexGrow: '0'}}>
-              {(this.state.user.yt_embed_1 === "undefined" || this.state.user.yt_embed_2 === "undefined")
+
+          <div style={{flexGrow: '1'}}>
+            <div className="profile-container-right">
+              {(this.state.user.yt_embed_1 === "undefined")
                 ?
                 null
                 :
-                <div className="profile-container-right">
-                  <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_1}} />
-                  <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_2}} />
-                </div>
+                <iframe title={this.state.user.yt_embed_1} width="560" height="315" src={this.state.user.yt_embed_1} frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              }
+              {(this.state.user.yt_embed_2 === "undefined")
+                ?
+                null
+                :
+                <iframe title={this.state.user.yt_embed_1} width="560" height="315" src={this.state.user.yt_embed_2} frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               }
+              </div>
           </div>
 
           <div style={{flexGrow: '4'}}>
