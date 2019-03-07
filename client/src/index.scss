@@ -67,9 +67,10 @@ footer {
 // Reusable global style classes
 
   .pageContent {
-    margin: 4vw;
+    margin: 0 4vw;
     min-width: 600px;
     background-color: black;
+    padding-bottom: 200px;
   }
 
   // MEDIA PLAYER STYLES
@@ -170,6 +171,37 @@ footer {
   .waveform-right-small {
     width: 80%
   }
+
+  // MEDIA PLAYER 2 STYLES
+  .media-player2 {
+
+  }
+
+  .media-2-container {
+    // background-image: linear-gradient(rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%), url('/texture1.jpg');
+    // background-attachment: fixed;
+    // background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .track-art {
+    width: 25%;
+    height: auto;
+    margin: auto;
+    display: block;
+    padding-top: 10vh;
+  }
+
+  .track-art-container {
+    margin: auto;
+  }
+
+  .waveform-track {
+    width: 100%;
+  }
+
 
   // FORM STYLES
   .form-horizontal {

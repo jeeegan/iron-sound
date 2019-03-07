@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../api';
-import Wavesurfer from '../Wavesurfer';
+import Wavesurfer2 from '../Wavesurfer2';
+import { Link } from 'react-router-dom';
 
 class Track extends Component {
   state = {}
@@ -35,16 +36,14 @@ class Track extends Component {
   render() {     
     return (
       <div className="pageContent">
-
-      <form className="form-vertical">
-          {this.state.track_img && <img alt="track cover"src={this.state.track_img}/>}
-          <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
-          <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
-        </form>
-        <div>
-        <h3>{this.state.title}</h3><br/>
+        <div className="track-art-container">     {this.state.track_img && <img className="track-art" alt="track cover"src={this.state.track_img}/>}
         </div>
-        <Wavesurfer 
+        <div className="media-2-container">
+          <h3>{this.state.title}</h3>
+          <Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.state.artist}`}>{this.state.artist}
+          </Link>
+        </div>
+        <Wavesurfer2 
             key={this.state._id} 
             identifier={this.state._id} 
             upload_url={this.state.upload_url} 
@@ -54,6 +53,11 @@ class Track extends Component {
             trackinfo="track-info"
             waveform="waveform-right"
           />  
+
+        {/* <form className="form-vertical">
+          <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
+          <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
+        </form> */}
       </div>
     );
   }

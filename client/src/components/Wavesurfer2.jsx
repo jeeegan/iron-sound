@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import { Link } from 'react-router-dom';
 
-class Wavesurfer extends Component {
+class Wavesurfer2 extends Component {
   state = {
     buttonimg: "/play-button-white.png",
     currentTime: "",
@@ -14,7 +14,7 @@ class Wavesurfer extends Component {
       container: '#waveform'+this.props.identifier,
       waveColor: 'Cornsilk',
       progressColor: 'rgb(121, 0, 0)',
-      height: '90',
+      height: '110',
       cursorColor: 'red'
     });
     this.wavesurfer.load(this.props.upload_url);
@@ -52,16 +52,6 @@ class Wavesurfer extends Component {
     let duration = this.wavesurfer && this.wavesurfer.getDuration()
     return(
       <div>
-        <div className={this.props.trackinfo}>
-          <div className={this.props.artistclass}>
-            <Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.props.artist}`}>{this.props.artist}
-            </Link>
-          </div>
-          <div className="title">
-            <Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}
-            </Link>
-          </div>
-        </div>
         <div className={this.props.media}>
           <div className="control-panel">          
             <button className="play-button" onClick={this.playButton}>
@@ -79,4 +69,4 @@ class Wavesurfer extends Component {
   }
 }
 
-export default Wavesurfer;
+export default Wavesurfer2;

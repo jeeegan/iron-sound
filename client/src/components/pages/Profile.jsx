@@ -51,14 +51,12 @@ class Profile extends Component {
         <div className="profile-container">
           <div style={{flexGrow: '1'}}>
             <div className="profile-container-right">
-              <h5>Youtube</h5>
               <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_1}} />
               <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_2}} />
             </div>
           </div>
 
           <div style={{flexGrow: '4'}}>
-            <h5>Audio Uploads</h5> <br/>
             {this.state.uploads && this.state.uploads.map( upload => {
               return <Wavesurfer 
                   key={upload._id} 

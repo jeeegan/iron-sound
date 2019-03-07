@@ -23,12 +23,13 @@ class PublicProfile extends Component {
   render() {     
     return (
       <div className="pageContent">
+      {/* USER PROFILE TEXT AND LINKS */}
         <div className="profile-header">
           <div className="profile-left">
             <div className="profile-text">
               <h2>{this.state.user.display_name}</h2>
               <div className="location">
-                {this.state.location}
+                {this.state.user.location}
               </div>
               <div className="bio">
                 {this.state.user.bio}
@@ -48,13 +49,31 @@ class PublicProfile extends Component {
             <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
           </div>
         </div>
-        <div>
-          <h5>Uploads:</h5>
-          {this.state.uploads && this.state.uploads.map( upload => {
-            return <Wavesurfer key={upload._id} identifier={upload._id} upload_url={upload.upload_url} artist={upload.artist} title={upload.title}/>
-          })}
-        </div>
+        <div className="profile-container">
+          <div style={{flexGrow: '1'}}>
+            <div className="profile-container-right">
+              <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_1}} />
+              <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_2}} />
+            </div>
+          </div>
 
+          <div style={{flexGrow: '4'}}>
+            {this.state.uploads && this.state.uploads.map( upload => {
+              return <Wavesurfer 
+                  key={upload._id} 
+                  identifier={upload._id} 
+                  upload_url={upload.upload_url} 
+                  artist={upload.artist} 
+                  title={upload.title}
+                  genre={upload.genre}
+                  media="media-player media-player-short"
+                  trackinfo="track-info track-info-short"
+                  waveform="waveform-right-small"
+                  artistclass="artist-short"
+                />
+            })}
+          </div>
+        </div>
       </div>
     );
   }
