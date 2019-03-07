@@ -4,12 +4,15 @@ import Wavesurfer2 from '../Wavesurfer2';
 import { Link } from 'react-router-dom';
 
 class Track extends Component {
-  state = {}
+  state = {
+    isOwner: false
+  }
 
   componentDidMount() {
     api.getTrack(this.props.match.params.trackid)
     .then(res => {
       this.setState(res);
+      this.isOwner();
     })
     .catch(console.log);
     
@@ -32,11 +35,42 @@ class Track extends Component {
       })
       .catch(err => this.setState({ message: err.toString() }))
   }
+
+  componentDidUpdate() {
+    console.log("isOwner", this.state.isOwner)
+    console.log("created_by", this.state._created_by)
+  }
+
+  isOwner() {
+    api.userData()
+      .then(res => {
+        if(res._id === this.state._created_by) {
+          this.setState({
+            isOwner: true
+          });
+        }
+      })
+      .catch(console.log);
+  }
   
   render() {     
     return (
       <div className="pageContent">
-        <div className="track-art-container">     {this.state.track_img && <img className="track-art" alt="track cover"src={this.state.track_img}/>}
+        <div className="track-art-container">
+          {(this.state.isOwner && !this.state.track_img)
+              ? 
+                  <form className="form-vertical">
+                    <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
+                    <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
+                  </form>
+              :
+                (this.state.track_img 
+                  ?
+                    <img alt="track cover" src={this.state.track_img}/>
+                  :
+                    null
+                )
+            }
         </div>
         <div className="media-2-container">
           <h3>{this.state.title}</h3>
