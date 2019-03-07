@@ -43,6 +43,9 @@ router.delete('/profile', isLoggedIn, (req, res, next) => {
   User.deleteOne({_id: req.user.id})
     .then(data =>  res.json(data))
     .catch(err => console.log(err));
+  Upload.deleteMany({_created_by: req.user.id})
+    .then(data => res.json(data))
+    .catch(err => console.log(err))
 });
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
