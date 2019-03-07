@@ -14,7 +14,7 @@ class Track extends Component {
       this.setState(res);
       this.isOwner();
     })
-    .catch(console.log);
+    .catch(err => console.log(err));
     
   }
 
@@ -33,7 +33,7 @@ class Track extends Component {
       .then(result => {
         this.props.history.push("/") // Redirect to the home page
       })
-      .catch(err => this.setState({ message: err.toString() }))
+      .catch(err => console.log(err))
   }
 
   isOwner() {
@@ -45,7 +45,7 @@ class Track extends Component {
           });
         }
       })
-      .catch(console.log);
+      .catch(err => console.log(err));
   }
   
   render() {     
