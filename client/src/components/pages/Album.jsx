@@ -36,8 +36,8 @@ class Album extends Component {
             ? 
               ((this.state.isOwner && !this.state.tracks[0].track_img)
               ?
-                <form className="form-vertical">
-                  <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
+                <form style={{paddingTop: '30vh'}} className="form-vertical">
+                  <input style={{ display: 'block', margin: 'auto' }} type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
                   <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
                 </form> : null)
             :

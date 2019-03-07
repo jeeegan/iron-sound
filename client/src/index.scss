@@ -53,6 +53,7 @@ footer {
 // --------------------
 // Style for App component
 .App {
+  *:focus {outline:none}
   .App-header {
     a {
       padding: 0 2vw;
@@ -85,7 +86,7 @@ footer {
     margin: 0 4vw;
     min-width: 500px;
     background-color: black;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
   }
 
   // MEDIA PLAYER STYLES
@@ -382,13 +383,19 @@ footer {
     width: 10%;
     border-radius: 25px;
     display: block;
-    margin: 10vh auto;
+    margin: 20vh auto 5vh auto;
     background-color: 'red';
     width: 25%;
   }
 
   .delete-button:hover {
     background-color: maroon;
+  }
+
+  // LOGIN
+
+  .login {
+    background-image: linear-gradient(rgba(0, 0, 0, 1) 25%, rgba(255, 255, 255, 0) 75%, rgba(0, 0, 0, 1)), url('/recordtexture3.jpg');
   }
 
   // --------------------

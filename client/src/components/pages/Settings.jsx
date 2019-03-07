@@ -70,7 +70,9 @@ class Settings extends Component {
   
   render() {     
     return (
-      <div className="pageContent">
+      <div className="pageContent" style={{ paddingTop: '6vh' }}>
+      <h2 style={{ textAlign: 'left', padding: '4vh 0 1vh 0' }}>Settings</h2>
+      <p>To embed YouTube videos on your profile: navigate to the video you wish to embed, click "SHARE", click "Embed", copy and paste the portion of the HTML inside of the src attribute so you have a link like this one: <span style={{ color: 'red' }}>https://www.youtube.com/embed/S6QDIW_FzQ0</span>.   <br/> <span style={{ color: 'yellow' }} >Be careful when deleting your account, this action is permanent and only requires one click.</span> </p>
         <form action="/update">
           <div className="form-horizontal">
 

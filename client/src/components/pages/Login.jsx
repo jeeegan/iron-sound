@@ -30,7 +30,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="Login pageContent">
+      <div className="pageContent">
         <h2 style={{ textAlign: 'center', padding: '4vh 0 1vh 0' }}>Login</h2>
         <form className="form-vertical">
           <div>
