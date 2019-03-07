@@ -26,8 +26,8 @@ let users = [
     bio: "Experiments & compositions of an electronic nature.",
     location: "Berlin",
     user_img: "https://res.cloudinary.com/jeeegan/image/upload/v1551710676/avatar-test.jpg",
-    yt_embed_1: '<iframe width="560" height="315" src="https://www.youtube.com/embed/S6QDIW_FzQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    yt_embed_2: '<iframe width="560" height="315" src="https://www.youtube.com/embed/gPkli_80jsM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    yt_embed_1: 'https://www.youtube.com/embed/S6QDIW_FzQ0',
+    yt_embed_2: 'https://www.youtube.com/embed/gPkli_80jsM',
     extendedBio: "Alec Budd works primarily in the realm of electronic music with a focus on danceability and experimentation.  His sound is based on a small collection of vintage / modern synthesizers & drum machines.  Samples and field recordings lace deep grooves with textural variability.  Works range from techno and deep house to ambient and atmospheric."
 },
 ]
