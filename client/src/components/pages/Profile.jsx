@@ -54,7 +54,7 @@ class Profile extends Component {
         </div>
 
         <div className="profile-bio-container">
-
+          
         </div>
 
         <div className="profile-container">
