@@ -60,7 +60,10 @@ class Signup extends Component {
   render() {
     return (
       <div className="pageContent">
-        <h2 style={{ textAlign: 'left', padding: '4vh 0 1vh 0' }}>Signup</h2>
+        <div>
+          <img style={{ display: 'block', margin: 'auto', paddingTop: '4vh', width: '140px', height: 'auto'}}src="WaveTerminalLOGO.png" alt="circle logo"/>
+        </div>
+        <h2 style={{ textAlign: 'left', padding: '1vh 0 1vh 0' }}>Signup</h2>
         <p>To embed YouTube videos on your profile: navigate to the video you wish to embed, click "SHARE", click "Embed", copy and paste the portion of the HTML inside of the src attribute so you have a link like this one: <span style={{ color: 'red' }}>https://www.youtube.com/embed/S6QDIW_FzQ0</span></p>
         <form>
           <div className="form-horizontal">

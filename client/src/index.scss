@@ -353,13 +353,12 @@ footer {
   // --------------------
   // ANIMATION
   .logoanimation {
-    animation-name: logo;
-    animation-duration: 5s;
+    animation: logoanime 5s infinite;
     width: 70px;
     height: 70px;
   }
 
-  @keyframes logo { 
+  @keyframes logoanime { 
     0% { background-color: 'white'; }
     50% { background-color: 'red'; }
     100% { background-color: 'white'; }
