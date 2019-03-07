@@ -51,9 +51,9 @@ class Upload extends Component {
   render() {
     return(
       <div className="pageContent">
-        <h2>Add Content</h2>
+        <h2 style={{ textAlign: 'center', padding: '4vh 0 1vh 0' }}>Add Content</h2>
         <form action="/upload">
-          <div className="form-horizontal">
+          <div className="form-vertical">
             <div className="form-vertical">
 
               <div className="form-item">

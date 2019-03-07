@@ -23,8 +23,8 @@ const Navbar = (props) => {
         </div>
         <div className="nav-right">
           {api.isLoggedIn() && <NavLink to="/settings"><img src="/icon-settings-button-white.png" alt="profile" style={{ width: '30px', height: 'auto' }}/></NavLink>}
-          {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
-          {!api.isLoggedIn() && <NavLink to="/login"><img src="/icon-power-button-white.png" alt="profile" style={{ width: '30px', height: 'auto' }}/></NavLink>}
+          {!api.isLoggedIn() && <NavLink to="/signup"><img src="/icon-signup.png" alt="profile" style={{ width: '30px', height: 'auto' }}/></NavLink>}
+          {!api.isLoggedIn() && <NavLink to="/login"><img src="/icon-power-button-white.png" alt="profile" style={{ width: '25px', height: 'auto' }}/></NavLink>}
           {api.isLoggedIn() && <NavLink to="/" onClick={(e) => 
               api.logout()
               .then(() => {
