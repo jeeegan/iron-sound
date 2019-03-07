@@ -92,7 +92,7 @@ class Settings extends Component {
               
               <div className="form-item">
                 <label className="form-label" htmlFor="bio">Bio</label> <br/>
-                <input className="form-input" id="extendedBio" type="text" value={this.state.user.extendedBio} onChange={(e) => this.handleInputChange("extendedBio", e)} />
+                <textarea rows="7" className="form-input" id="extendedBio" type="text" value={this.state.user.extendedBio} onChange={(e) => this.handleInputChange("extendedBio", e)}></textarea>
               </div>
             </div>
 
@@ -137,6 +137,7 @@ class Settings extends Component {
         </div>
           
         <button className="form-button" onClick={(e) => this.handleUpdateClick(e)}>Update</button>
+        
         </form>
 
         <form action="/update">
