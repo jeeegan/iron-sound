@@ -15,7 +15,9 @@ class Signup extends Component {
       bio: "",
       location: "",
       user_img: null,
-      message: null
+      message: null,
+      yt_embed_1: null,
+      yt_embed_2: null,
     }
   }
 
