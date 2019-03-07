@@ -72,7 +72,6 @@ class Wavesurfer extends Component {
   render() {
 
     let isLoaded = this.state.duration > 0
-    console.log("line 75",this.state.isPlaying)
     return(
       <div onClick={this.handleClick}>
         <div className='track-info-container'>
