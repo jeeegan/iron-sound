@@ -31,7 +31,7 @@ class Album extends Component {
   render() {     
     return (
       <div className="pageContent">
-        <div>
+        <div className="track-art-container">
           
           {!(this.state.tracks && this.state.tracks[0].track_img)
             ? 
@@ -42,7 +42,7 @@ class Album extends Component {
                   <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
                 </form> : null)
             :
-              <img alt="track cover" src={this.state.tracks && this.state.tracks[0].track_img}/>
+              <img className="track-art" alt="track cover" src={this.state.tracks && this.state.tracks[0].track_img}/>
           }
         </div>
         <div>

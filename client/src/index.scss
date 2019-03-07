@@ -191,11 +191,13 @@ footer {
     height: auto;
     margin: auto;
     display: block;
-    padding-top: 10vh;
+    padding: 8vh 0;
   }
 
   .track-art-container {
-    margin: auto;
+    background-image: linear-gradient( rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 60%), url('/berlin2.png');
+    background-attachment: fixed;
+    background-size: cover;
   }
 
   .waveform-track {

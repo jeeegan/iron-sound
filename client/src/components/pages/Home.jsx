@@ -3,6 +3,12 @@ import Wavesurfer from '../Wavesurfer';
 
 class Home extends Component {
 
+  // PLAY NEXT TRACK WHEN FINISHED will need to lift up state to make this work
+  // playNext() {
+  //   for (var i=0; i < this.props.uploads; i++) {
+  //   }
+  // }
+
   render() {   
     return (
       <div className="Home pageContent">
