@@ -14,6 +14,7 @@ class Upload extends Component {
       host: 'bc',
       upload_img: null,
       upload_type: "track",
+      upload_in_progress: false,
     };
   }
 
@@ -31,6 +32,7 @@ class Upload extends Component {
 
   handleClick(e) {
     e.preventDefault()
+    this.setState({upload_in_progress: true});
     let formData = new FormData();
     formData.append("title", this.state.title);
     formData.append("artist", this.state.artist);
@@ -88,8 +90,13 @@ class Upload extends Component {
               </div>
             </div>
           </div>
-
-          <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
+          {this.state.upload_in_progress
+            ?
+              <div>Uploading, this will take a few seconds...<div class="loader"/></div>
+            :
+              <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
+          }
+          
         </form>
       </div>
     )

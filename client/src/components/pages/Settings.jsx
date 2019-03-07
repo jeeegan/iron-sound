@@ -31,6 +31,8 @@ class Settings extends Component {
     formData.append("sc_url", this.state.user.sc_url);
     formData.append("bc_url", this.state.user.bc_url);
     formData.append("yt_url", this.state.user.yt_url);
+    formData.append("yt_embed_1", this.state.user.yt_embed_1);
+    formData.append("yt_embed_2", this.state.user.yt_embed_2);
     formData.append("_id", this.state.user._id);
     api.update(formData)
       .then(result => {
@@ -98,6 +100,16 @@ class Settings extends Component {
               <div className="form-item">
                 <label className="form-label" htmlFor="yt_url">Youtube URL</label> <br/>
                 <input className="form-input" type="text" value={this.state.user.yt_url} onChange={(e) => this.handleInputChange("yt_url", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="yt_url">Youtube Embed URL</label> <br/>
+                <input className="form-input" type="text" value={this.state.user.yt_embed_1} onChange={(e) => this.handleInputChange("yt_embed_1", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="yt_url">Youtube Embed URL</label> <br/>
+                <input className="form-input" type="text" value={this.state.user.yt_embed_2} onChange={(e) => this.handleInputChange("yt_embed_2", e)} />
               </div>
             </div>
 

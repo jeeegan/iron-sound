@@ -23,3 +23,8 @@ To login and demo the system you can use the following info:
 * Heroku deployment/hosting
 ## Source Code
 [https://github.com/jeeegan/waveterminal]
+
+
+## Notes
+- Create an Album model
+- On the page "/upload", add a loading part when the user clicked on "Upload"
