@@ -3,10 +3,11 @@ import WaveSurfer from 'wavesurfer.js';
 import { Link } from 'react-router-dom';
 
 class Wavesurfer extends Component {
+  
   state = {
-    buttonimg: "/play-button-white.png",
+    isPlaying: false,
     currentTime: "",
-    duration: ""
+    duration: 0
   };
   
   componentDidMount() {
@@ -18,25 +19,37 @@ class Wavesurfer extends Component {
       cursorColor: 'red'
     });
     this.wavesurfer.load(this.props.upload_url);
-
-    setInterval(() => {
+    this.wavesurfer.on('ready', () => {
       this.setState({
-        currentTime: this.wavesurfer.getCurrentTime()
+        duration: this.wavesurfer.getDuration()
       })
-    }, 200)
+    })
   }
 
   componentWillUnmount() {
     this.wavesurfer.destroy();
+    clearInterval(this.intervalId)
   }
   
   playButton = () => {
     this.wavesurfer.playPause();
-    if (this.state.buttonimg === "/play-button-white.png") {
-      return this.setState( {buttonimg: "/pause-button-white.png"} )
-    } else {
-      return this.setState( {buttonimg: "/play-button-white.png"} )
-    }  
+    if (this.state.isPlaying) {
+      this.setState( {
+        isPlaying: false
+      })
+      clearInterval(this.intervalId)
+    }
+    else {
+      this.setState( {
+        isPlaying: true
+      })
+      this.intervalId = setInterval(() => {
+        this.setState({
+          currentTime: this.wavesurfer.getCurrentTime()
+        })
+      }, 200)
+    }
+
   }
 
   convertNumberToMinutesSeconds(numberOfSeconds) {
@@ -48,10 +61,20 @@ class Wavesurfer extends Component {
     return min + ":" + sec
   }
 
+  handleClick = () => {
+    setTimeout(() => {
+      this.setState({
+        currentTime: this.wavesurfer.getCurrentTime()
+      })
+    }, 200)
+  }
+
   render() {
-    let duration = this.wavesurfer && this.wavesurfer.getDuration()
+
+    let isLoaded = this.state.duration > 0
+    
     return(
-      <div>
+      <div onClick={this.handleClick}>
         <div className='track-info-container'>
           <div className={this.props.trackinfo}>
             <div className={this.props.artistclass}>
@@ -72,14 +95,19 @@ class Wavesurfer extends Component {
         <div className={this.props.media}>
           <div className="control-panel">          
             <button className="play-button" onClick={this.playButton}>
-              <img src={this.state.buttonimg} alt=""/>
+              <img src={(this.state.isPlaying ? "pause" : "play") + "-button-white.png"} alt=""/>
             </button>
             <div className="media-time">
-              <p><span style={{ color: 'cornsilk' }}>{this.convertNumberToMinutesSeconds(this.state.currentTime)}</span> <span style={{ color: 'grey' }}> / </span>{this.convertNumberToMinutesSeconds(duration)}</p>
+              <p><span style={{ color: 'cornsilk' }}>{this.convertNumberToMinutesSeconds(this.state.currentTime)}</span> <span style={{ color: 'grey' }}> / </span>{this.convertNumberToMinutesSeconds(this.state.duration)}</p>
             </div>
           </div>
 
-          <div className={this.props.waveform} id={`waveform${this.props.identifier}`}></div>
+          <div>
+            {!isLoaded && <div><div className="loader"/>Loading...</div>}
+          </div>
+
+          <div className={this.props.waveform} id={`waveform${this.props.identifier}`}>
+          </div>
         </div>
       </div>
     )

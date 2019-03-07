@@ -55,7 +55,7 @@ export default {
 
   upload(formData) {
     return service
-      .post('/upload', formData)
+      .post('/uploads', formData)
       .then(res => res.data)
       .catch(errHandler);
   },
@@ -69,21 +69,21 @@ export default {
 
   update(formData) {
     return service
-      .put('/update', formData)
+      .put('/profile', formData)
       .then(res => res.data)
       .catch(errHandler);
   },
 
   deleteUser() {
     return service
-      .delete('/profile/delete')
+      .delete('/profile')
       .then(res => res.data)
       .catch(errHandler)
   },
 
   deleteTrack(trackId) {
     return service
-      .delete(`/track/delete/${trackId}`)
+      .delete(`/tracks/${trackId}`)
       .then(res => res.data)
       .catch(errHandler);
   },
@@ -118,14 +118,14 @@ export default {
 
   getTrack(trackID) {
     return service
-      .get(`/track/${trackID}`)
+      .get(`/tracks/${trackID}`)
       .then(res => res.data)
       .catch(errHandler);
   },
 
   getUploadData() {
     return service
-      .get('/')
+      .get('/uploads')
       .then(res => res.data)
       .catch(errHandler)
   },

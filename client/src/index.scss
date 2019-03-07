@@ -22,6 +22,20 @@ footer {
   text-align: center;
 }
 
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid rgb(66, 66, 66); 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .info {
   margin: 20px;
   padding: 10px 20px;
@@ -183,10 +197,6 @@ footer {
     width: 80%
   }
 
-  // MEDIA PLAYER 2 STYLES
-  .media-player2 {
-
-  }
 
   .media-2-container {
     // background-image: linear-gradient(rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%), url('/texture1.jpg');

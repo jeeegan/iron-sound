@@ -18,7 +18,7 @@ router.put("/upload-track-image", uploaderImage.single("track_img"), (req, res, 
     .catch(err => console.log(err));
 });
 
-router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
+router.post("/uploads", uploader.single("upload_url"), (req, res, next) => {
   const { title, artist, album, year, genre, upload_url, host, upload_img, upload_type } = req.body;
   const newUpload = new Upload({ title, artist, album, year, genre, upload_url, host, upload_img, upload_type, _created_by: req.user._id });
 
@@ -31,14 +31,15 @@ router.post("/upload", uploader.single("upload_url"), (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-router.put('/update', uploader.none(), (req, res, next) => {
-  const { _id, display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio } = req.body;
-  User.updateOne({_id: _id}, { display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio })
+router.put('/profile', uploader.none(), (req, res, next) => {
+  // When the user is connected, req.user is defined
+  const { display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio } = req.body;
+  User.findByIdAndUpdate(req.user._id, { display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio })
     .then(data => res.json(data))
     .catch(err => console.log(err));
 });
 
-router.delete('/profile/delete', isLoggedIn, (req, res, next) => {
+router.delete('/profile', isLoggedIn, (req, res, next) => {
   User.deleteOne({_id: req.user.id})
     .then(data =>  res.json(data))
     .catch(err => console.log(err));
@@ -72,19 +73,19 @@ router.get("/profile/:displayname", (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-router.get("/track/:id", (req, res, next) => {
+router.get("/tracks/:id", (req, res, next) => {
   Upload.findOne({ _id: req.params.id})
     .then(data => res.json(data))
     .catch(err => console.log(err));
 });
 
-router.delete("/track/delete/:id", (req, res, next) => {
+router.delete("/tracks/:id", (req, res, next) => {
   Upload.deleteOne({_id: req.params.id})
     .then(data => res.json(data))
     .catch(err => console.log(err));
 });
 
-router.get("/", (req, res, next) => {
+router.get("/uploads", (req, res, next) => {
   Upload.find()
     .then((data) => res.json(data))
     .catch(err => console.log(err));
