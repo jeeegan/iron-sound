@@ -32,7 +32,6 @@ class Album extends Component {
     return (
       <div className="pageContent">
         <div className="track-art-container">
-          
           {!(this.state.tracks && this.state.tracks[0].track_img)
             ? 
               ((this.state.isOwner && !this.state.tracks[0].track_img)
@@ -45,6 +44,12 @@ class Album extends Component {
               <img className="track-art" alt="track cover" src={this.state.tracks && this.state.tracks[0].track_img}/>
           }
         </div>
+
+        <div className="album-info">
+          <h3>{this.state.tracks && this.state.tracks[0].album}</h3>
+          <h4>{this.state.tracks && this.state.tracks[0].year}</h4>
+        </div>
+
         <div>
           {this.state.tracks && this.state.tracks.map( (track) => {
             return <Wavesurfer 

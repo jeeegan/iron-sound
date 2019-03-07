@@ -195,13 +195,18 @@ footer {
   }
 
   .track-art-container {
-    background-image: linear-gradient( rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 60%), url('/berlin2.png');
+    background-image: linear-gradient( rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 60%), url('/texture1.jpg');
     background-attachment: fixed;
     background-size: cover;
   }
 
   .waveform-track {
     width: 100%;
+  }
+
+  .album-info {
+    text-align: center;
+    margin: 8vh 0;
   }
 
 
@@ -242,6 +247,7 @@ footer {
     justify-content: space-between;
     flex-direction: row;
     margin-bottom: 60px;
+    margin-top: 10vh;
     // padding: 30px;
     // background-color: rgb(73, 73, 73);
   }
@@ -307,6 +313,7 @@ footer {
     background-position: center;
     margin-bottom: -10vh;
     padding-bottom: 25vh;
+    padding-top: 10vh;
   }
 
 
