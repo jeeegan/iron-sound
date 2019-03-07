@@ -115,9 +115,14 @@ class Settings extends Component {
 
           <div className="form-vertical">
             <div className="form-item">
-              <div className="user-img">
-                <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
-              </div>
+              {this.state.user.user_img
+                ?
+                  <div className="user-img">
+                    <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
+                  </div>
+                :
+                  null
+              }
             </div>
             <h3>Track List</h3>
             <div className="form-item">
