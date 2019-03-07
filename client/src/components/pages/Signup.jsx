@@ -46,12 +46,12 @@ class Signup extends Component {
     formData.append("yt_embed_1", this.state.yt_embed_1);
     formData.append("yt_embed_2", this.state.yt_embed_2);
     formData.append("extendedBio", this.state.extendedBio);
-    this.state.user_img && formData.append("user_img", this.state.user_img);
+    formData.append("user_img", this.state.user_img);
     api.signup(formData)
       .then(result => {
         this.props.history.push("/") // Redirect to the home page
       })
-      .catch(err => this.setState({ message: err.toString() }))
+      .catch(err => console.log(err));
   }
 
   render() {

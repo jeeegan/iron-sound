@@ -13,6 +13,8 @@ router.post("/signup", uploader.single("user_img"), (req, res, next) => {
 
   if (req.file) {
     user_img = req.file.secure_url;
+  } else {
+    user_img = null;
   }
 
   User.findOne({ email })
