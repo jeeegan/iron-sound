@@ -13,11 +13,12 @@ class Signup extends Component {
       yt_url: "",
       custom_url: "",
       bio: "",
+      extendedBio: "",
       location: "",
       user_img: null,
       message: null,
-      yt_embed_1: null,
-      yt_embed_2: null,
+      yt_embed_1: "",
+      yt_embed_2: "",
     }
   }
 

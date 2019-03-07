@@ -63,17 +63,17 @@ class Profile extends Component {
 
           <div style={{flexGrow: '1'}}>
             <div className="profile-container-right">
-              {(this.state.user.yt_embed_1 === "undefined")
+              {(!this.state.user.yt_embed_1 || this.state.user.yt_embed_1=="," || this.state.user.yt_embed_1=="")
                 ?
-                null
+                <div></div>
                 :
                 <iframe title={this.state.user.yt_embed_1} width="560" height="315" src={this.state.user.yt_embed_1} frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              }
-              {(this.state.user.yt_embed_2 === "undefined")
+              {(!this.state.user.yt_embed_2 || this.state.user.yt_embed_2=="," || this.state.user.yt_embed_2=="")
                 ?
-                null
+                <div></div>
                 :
-                <iframe title={this.state.user.yt_embed_1} width="560" height="315" src={this.state.user.yt_embed_2} frameborder="0" 
+                <iframe title={this.state.user.yt_embed_2} width="560" height="315" src={this.state.user.yt_embed_2} frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               }
               </div>
