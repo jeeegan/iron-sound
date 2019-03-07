@@ -16,8 +16,7 @@ class Profile extends Component {
         uploads: res.uploads
       });
     })
-    .catch(console.log);
-    
+    .catch(console.log);  
   }
   
   render() {     
@@ -76,8 +75,6 @@ class Profile extends Component {
             })}
           </div>
         </div>
-        
-
       </div>
     );
   }

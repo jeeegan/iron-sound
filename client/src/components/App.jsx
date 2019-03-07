@@ -65,7 +65,7 @@ class App extends Component {
         </header>
         <Switch>
           <Route path="/" exact render={() =>
-              <Home userData={this.state.homeState} uploads={this.state.homeUploads }/>
+              <Home userData={this.state.homeState} uploads={this.state.homeUploads } />
             } />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" render={() =>

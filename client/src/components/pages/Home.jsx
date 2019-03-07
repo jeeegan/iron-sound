@@ -15,6 +15,7 @@ class Home extends Component {
               display: 'block',
             }}/>
           </div>
+          
           {this.props.uploads && this.props.uploads.map( upload => {
             return <Wavesurfer 
               key={upload._id} 
