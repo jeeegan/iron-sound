@@ -78,6 +78,7 @@ class Track extends Component {
             upload_url={this.state.upload_url} 
             artist={this.state.artist}
             album={this.state.album} 
+            albumClass='album'
             title={this.state.title}
             media="media-player"
             trackinfo="track-info"

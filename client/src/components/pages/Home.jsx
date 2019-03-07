@@ -29,6 +29,7 @@ class Home extends Component {
               upload_url={upload.upload_url} 
               artist={upload.artist}
               album={upload.album} 
+              albumClass='album'
               title={upload.title}
               genre={upload.genre}
               media="media-player"

@@ -52,20 +52,23 @@ class Wavesurfer extends Component {
     let duration = this.wavesurfer && this.wavesurfer.getDuration()
     return(
       <div>
-        <div className={this.props.trackinfo}>
-          <div className={this.props.artistclass}>
-            <Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.props.artist}`}>{this.props.artist}
-            </Link>
+        <div className='track-info-container'>
+          <div className={this.props.trackinfo}>
+            <div className={this.props.artistclass}>
+              <Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.props.artist}`}>{this.props.artist}
+              </Link>
+            </div>
+            <div className="title">
+              <Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}
+              </Link>
+            </div>
           </div>
-          <div className="title">
+          <div>
             <Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}
             </Link>
           </div>
-          <div>
-            <Link style={{textDecoration: 'none', color: 'white', alignSelf: 'flexEnd'}} className="link" to={`/album/${this.props.album}`}>{this.props.album}
-            </Link>
-          </div>
         </div>
+        
         <div className={this.props.media}>
           <div className="control-panel">          
             <button className="play-button" onClick={this.playButton}>
