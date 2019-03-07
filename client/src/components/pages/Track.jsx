@@ -66,7 +66,7 @@ class Track extends Component {
               :
                 (this.state.track_img 
                   ?
-                    <img alt="track cover" src={this.state.track_img}/>
+                    <img className="track-art" alt="track cover" src={this.state.track_img}/>
                   :
                     null
                 )
