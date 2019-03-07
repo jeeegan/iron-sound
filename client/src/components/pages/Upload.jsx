@@ -10,7 +10,7 @@ class Upload extends Component {
       album: "",
       year: "",
       genre: "",
-      upload_url: "",
+      upload_url: null,
       host: 'bc',
       upload_img: null,
       upload_type: "track",
@@ -24,7 +24,6 @@ class Upload extends Component {
   }
 
   handleFileUpload = e => {
-    console.log(e)
     this.setState({
       upload_url: e[0]
     })
