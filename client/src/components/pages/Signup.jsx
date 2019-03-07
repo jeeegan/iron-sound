@@ -56,23 +56,28 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="Signup pageContent">
-        <h2>Signup</h2>
-        <form className="form-vertical">
-          Display Name: <input type="text" value={this.state.display_name} onChange={(e) => this.handleInputChange("display_name", e)} /> <br />
-          Password: <input type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> <br />
-          Email: <input type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> <br />
-          Bandcamp URL: <input type="text" value={this.state.bc_url} onChange={(e) => this.handleInputChange("bc_url", e)} /> <br />
-          SoundCloud URL: <input type="text" value={this.state.sc_url} onChange={(e) => this.handleInputChange("sc_url", e)} /> <br />
-          YouTube URL: <input type="text" value={this.state.yt_url} onChange={(e) => this.handleInputChange("yt_url", e)} /> <br />
-          YouTube iFrame 1: <input type="text" value={this.state.yt_embed_1} onChange={(e) => this.handleInputChange("yt_embed_1", e)} /> <br />
-          YouTube iFrame 2: <input type="text" value={this.state.yt_embed_2} onChange={(e) => this.handleInputChange("yt_embed_2", e)} /> <br />
-          Personal Website URL: <input type="text" value={this.state.custom_url} onChange={(e) => this.handleInputChange("custom_url", e)} /> <br />
-          Short Bio: <input type="text" value={this.state.bio} onChange={(e) => this.handleInputChange("bio", e)} /> <br />
-          Extended Bio: <input type="text" value={this.state.extendedBio} onChange={(e) => this.handleInputChange("extendedBio", e)} /> <br />
-          Location: <input type="text" value={this.state.location} onChange={(e) => this.handleInputChange("location", e)} /> <br />
-          Profile Picture: <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
-
+      <div className="pageContent">
+        <h2 style={{ textAlign: 'left', padding: '4vh 0 1vh 0' }}>Signup</h2>
+        <form>
+          <div className="form-horizontal">
+            <div className="form-vertical2 signup">
+              *Email: <input className="signup-input" type="email" value={this.state.email} onChange={(e) => this.handleInputChange("email", e)} /> <br />
+              *Password: <input className="signup-input" type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> <br />
+              *Display Name: <input className="signup-input" type="text" value={this.state.display_name} onChange={(e) => this.handleInputChange("display_name", e)} /> <br />
+              Location: <input className="signup-input" type="text" value={this.state.location} onChange={(e) => this.handleInputChange("location", e)} /> <br />
+              Headline: <input className="signup-input" type="text" value={this.state.bio} onChange={(e) => this.handleInputChange("bio", e)} /> <br />
+              Profile Picture: <input className="signup-input" type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />  
+            </div>
+            <div className="form-vertical2 signup">
+              Bandcamp URL: <input className="signup-input" type="text" value={this.state.bc_url} onChange={(e) => this.handleInputChange("bc_url", e)} /> <br />
+              SoundCloud URL: <input className="signup-input" type="text" value={this.state.sc_url} onChange={(e) => this.handleInputChange("sc_url", e)} /> <br />
+              YouTube URL: <input className="signup-input" type="text" value={this.state.yt_url} onChange={(e) =>  this.handleInputChange("yt_url", e)} /> <br />
+              YouTube iFrame 1: <input className="signup-input" type="text" value={this.state.yt_embed_1} onChange={(e) => this.handleInputChange("yt_embed_1", e)} /> <br />
+              YouTube iFrame 2: <input className="signup-input" type="text" value={this.state.yt_embed_2} onChange={(e) => this.handleInputChange("yt_embed_2", e)} /> <br />
+              Personal Website URL: <input className="signup-input" type="text" value={this.state.custom_url} onChange={(e) => this.handleInputChange("custom_url", e)} /> <br />
+            </div>
+          </div>
+          Bio: <br/> <textarea rows="7" style={{ width: '95.5%'}} className="signup-input" type="text" value={this.state.extendedBio} onChange={(e) => this.handleInputChange("extendedBio", e)}></textarea> <br />
           <button className="form-button" onClick={(e) => this.handleClick(e)}>Signup</button>
         </form>
         {this.state.message && <div className="info info-danger">

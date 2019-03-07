@@ -136,6 +136,7 @@ footer {
   .track-info-short {
     background-image: linear-gradient( to right, rgb(121, 0, 0) 50%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 95%), url('/berlin2.jpg');
     background-position-x: 50%;
+    border-top-left-radius : 25px;
   }
 
   .artist {
@@ -243,6 +244,12 @@ footer {
   .form-vertical {
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+
+  .form-vertical2 {
+    display: flex;
+    flex-direction: column;
   }
 
   .form-item {
@@ -258,8 +265,22 @@ footer {
   }
 
   .form-button {
-    width: 20%;
-    margin: 4vh 0;
+    width: 10%;
+    border-radius: 25px;
+    display: block;
+    margin: 10vh auto;
+  }
+
+  .form-button:hover {
+    background-color: red;
+  }
+
+  .signup {
+    flex-grow: 1;
+  }
+
+  .signup-input {
+    width: 90%;
   }
 
 // --------------------
