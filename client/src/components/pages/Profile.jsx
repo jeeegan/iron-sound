@@ -54,10 +54,16 @@ class Profile extends Component {
         </div>
         <div className="profile-container">
           <div style={{flexGrow: '1'}}>
-            <div className="profile-container-right">
-              <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_1}} />
-              <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_2}} />
-            </div>
+              {console.log("this.state.user.yt_embed_1",this.state.user.yt_embed_1)}
+              {!(this.state.user.yt_embed_1 || this.state.user.yt_embed_2)
+                ?
+                <div className="profile-container-right">
+                  <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_1}} />
+                  <div dangerouslySetInnerHTML={{ __html: this.state.user.yt_embed_2}} />
+                </div>
+                :
+                null
+              }
           </div>
 
           <div style={{flexGrow: '4'}}>
