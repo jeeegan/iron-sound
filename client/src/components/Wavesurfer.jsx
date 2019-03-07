@@ -61,6 +61,10 @@ class Wavesurfer extends Component {
             <Link style={{textDecoration: 'none', color: 'white'}} className="link" to={`/track/${this.props.identifier}`}>{this.props.title}
             </Link>
           </div>
+          <div>
+            <Link style={{textDecoration: 'none', color: 'white', alignSelf: 'flexEnd'}} className="link" to={`/album/${this.props.album}`}>{this.props.album}
+            </Link>
+          </div>
         </div>
         <div className={this.props.media}>
           <div className="control-panel">          

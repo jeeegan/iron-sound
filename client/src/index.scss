@@ -68,7 +68,7 @@ footer {
 
   .pageContent {
     margin: 0 4vw;
-    min-width: 600px;
+    min-width: 500px;
     background-color: black;
     padding-bottom: 200px;
   }
@@ -87,6 +87,7 @@ footer {
     margin-bottom: 10px;
     background-image: linear-gradient( rgb(148, 148, 148), rgb(0, 0, 0));
     height: 18vh;
+    width: 100%;
   }
 
   .media-player.short {
@@ -191,11 +192,11 @@ footer {
     height: auto;
     margin: auto;
     display: block;
-    padding: 8vh 0;
+    padding-top: 8vh;
   }
 
   .track-art-container {
-    background-image: linear-gradient( rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 60%), url('/texture1.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 60%), url('/texture2.jpg');
     background-attachment: fixed;
     background-size: cover;
   }
@@ -206,9 +207,9 @@ footer {
 
   .album-info {
     text-align: center;
-    margin: 8vh 0;
+    margin-bottom: 8vh;
+    margin-top: 2vh;
   }
-
 
   // FORM STYLES
   .form-horizontal {

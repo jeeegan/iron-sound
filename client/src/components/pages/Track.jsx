@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
-import Wavesurfer2 from '../Wavesurfer2';
+import Wavesurfer from '../Wavesurfer';
 import { Link } from 'react-router-dom';
 
 class Track extends Component {
@@ -67,20 +67,22 @@ class Track extends Component {
                 )
             }
         </div>
-        <div className="media-2-container">
+        {/* <div className="media-2-container">
           <h3>{this.state.title}</h3>
           <Link style={{textDecoration: 'none', color: 'cornsilk'}} className="link" to={`/profile/${this.state.artist}`}>{this.state.artist}
           </Link>
-        </div>
-        <Wavesurfer2 
+        </div> */}
+        <Wavesurfer 
             key={this.state._id} 
             identifier={this.state._id} 
             upload_url={this.state.upload_url} 
-            artist={this.state.artist} 
+            artist={this.state.artist}
+            album={this.state.album} 
             title={this.state.title}
             media="media-player"
             trackinfo="track-info"
             waveform="waveform-right"
+            artistclass="artist"
           />  
       </div>
     );

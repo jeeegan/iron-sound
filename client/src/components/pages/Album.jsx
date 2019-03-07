@@ -47,9 +47,9 @@ class Album extends Component {
 
         <div className="album-info">
           <h3>{this.state.tracks && this.state.tracks[0].album}</h3>
-          <h4>{this.state.tracks && this.state.tracks[0].year}</h4>
+          <h7>{this.state.tracks && this.state.tracks[0].genre}</h7> <br/>
+          <h7>{this.state.tracks && this.state.tracks[0].year}</h7>
         </div>
-
         <div>
           {this.state.tracks && this.state.tracks.map( (track) => {
             return <Wavesurfer 

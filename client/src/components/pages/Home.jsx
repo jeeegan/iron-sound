@@ -27,7 +27,8 @@ class Home extends Component {
               key={upload._id} 
               identifier={upload._id} 
               upload_url={upload.upload_url} 
-              artist={upload.artist} 
+              artist={upload.artist}
+              album={upload.album} 
               title={upload.title}
               genre={upload.genre}
               media="media-player"

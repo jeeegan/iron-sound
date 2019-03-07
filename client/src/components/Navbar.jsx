@@ -9,14 +9,14 @@ const Navbar = (props) => {
           <NavLink to="/" exact><img 
             src="/WTLogoW.png"  
             style={{ 
-              width: '60px', 
+              width: '70px', 
               height: 'auto',
               id: 'logo',
               margin: '-20px',
             }} 
             alt="logo"/></NavLink>
-          {api.isLoggedIn() && <NavLink to="/upload">Upload</NavLink>}
-          {api.isLoggedIn() && <NavLink to="/profile">My Profile</NavLink>}
+          {api.isLoggedIn() && <NavLink to="/upload"><img src="/icon-add.png" alt="add" style={{ width: '30px', height: 'auto' }}/></NavLink>}
+          {api.isLoggedIn() && <NavLink to="/profile"><img src="/icon-profile.png" alt="profile" style={{ width: '30px', height: 'auto' }}/></NavLink>}
         </div>
         <div className="nav-right">
           {api.isLoggedIn() && <NavLink to="/settings">Settings</NavLink>}
