@@ -52,6 +52,11 @@ class Profile extends Component {
               null
           }
         </div>
+
+        <div className="profile-bio-container">
+
+        </div>
+
         <div className="profile-container">
           <div style={{flexGrow: '1'}}>
               {console.log("this.state.user.yt_embed_1",this.state.user.yt_embed_1)}

@@ -83,7 +83,7 @@ class Settings extends Component {
               </div>
 
               <div className="form-item">
-                <label className="form-label" htmlFor="bio">Bio</label> <br/>
+                <label className="form-label" htmlFor="bio">Headline</label> <br/>
                 <input className="form-input" id="bio" type="text" value={this.state.user.bio} onChange={(e) => this.handleInputChange("bio", e)} />
               </div>
 
@@ -103,36 +103,26 @@ class Settings extends Component {
               </div>
 
               <div className="form-item">
-                <label className="form-label" htmlFor="yt_url">Youtube Embed URL</label> <br/>
+                <label className="form-label" htmlFor="yt_url">Youtube Embed URL 1</label> <br/>
                 <input className="form-input" type="text" value={this.state.user.yt_embed_1} onChange={(e) => this.handleInputChange("yt_embed_1", e)} />
               </div>
 
               <div className="form-item">
-                <label className="form-label" htmlFor="yt_url">Youtube Embed URL</label> <br/>
+                <label className="form-label" htmlFor="yt_url">Youtube Embed URL 2</label> <br/>
                 <input className="form-input" type="text" value={this.state.user.yt_embed_2} onChange={(e) => this.handleInputChange("yt_embed_2", e)} />
               </div>
             </div>
 
           <div className="form-vertical">
-            <div className="form-item">
-              {this.state.user.user_img
-                ?
-                  <div className="user-img">
-                    <img src={this.state.user.user_img} alt="profile" style={{width: "30vh", height: "auto"}}/>
-                  </div>
-                :
-                  null
-              }
-            </div>
             <h3>Track List</h3>
             <div className="form-item">
               {this.state.uploads.map(upload => <div key={upload._id}><span>{upload.title}  </span><button onClick={(e) => this.handleTrackDelete(e, upload._id)}>DELETE</button></div>)}
             </div>
 
-            </div>
           </div>
+        </div>
           
-          <button className="form-button" onClick={(e) => this.handleUpdateClick(e)}>Update</button>
+        <button className="form-button" onClick={(e) => this.handleUpdateClick(e)}>Update</button>
         </form>
 
         <form action="/update">
