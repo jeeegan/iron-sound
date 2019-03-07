@@ -33,8 +33,8 @@ router.post("/uploads", uploader.single("upload_url"), (req, res, next) => {
 
 router.put('/profile', uploader.none(), (req, res, next) => {
   // When the user is connected, req.user is defined
-  const { display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio } = req.body;
-  User.findByIdAndUpdate(req.user._id, { display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio })
+  const { display_name, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio, custom_url } = req.body;
+  User.findByIdAndUpdate(req.user._id, { display_name, custom_url, location, bio, sc_url, bc_url, yt_url, yt_embed_1, yt_embed_2, extendedBio })
     .then(data => res.json(data))
     .catch(err => console.log(err));
 });

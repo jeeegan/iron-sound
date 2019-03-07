@@ -33,6 +33,9 @@ class Settings extends Component {
     formData.append("yt_url", this.state.user.yt_url);
     formData.append("yt_embed_1", this.state.user.yt_embed_1);
     formData.append("yt_embed_2", this.state.user.yt_embed_2);
+    formData.append("yt_embed_2", this.state.user.yt_embed_2);
+    formData.append("custom_url", this.state.user.custom_url);
+    formData.append("extendedBio", this.state.user.extendedBio);
     formData.append("_id", this.state.user._id);
     api.update(formData)
       .then(result => {
@@ -86,6 +89,11 @@ class Settings extends Component {
                 <label className="form-label" htmlFor="bio">Headline</label> <br/>
                 <input className="form-input" id="bio" type="text" value={this.state.user.bio} onChange={(e) => this.handleInputChange("bio", e)} />
               </div>
+              
+              <div className="form-item">
+                <label className="form-label" htmlFor="bio">Bio</label> <br/>
+                <input className="form-input" id="extendedBio" type="text" value={this.state.user.extendedBio} onChange={(e) => this.handleInputChange("extendedBio", e)} />
+              </div>
 
               <div className="form-item">
                 <label className="form-label" htmlFor="sc_url">Soundcloud URL</label> <br/>
@@ -95,6 +103,11 @@ class Settings extends Component {
               <div className="form-item">
                 <label className="form-label" htmlFor="bc_url">Bandcamp URL</label> <br/>
                 <input className="form-input" type="text" value={this.state.user.bc_url} onChange={(e) => this.handleInputChange("bc_url", e)} />
+              </div>
+
+              <div className="form-item">
+                <label className="form-label" htmlFor="bc_url">Custom URL</label> <br/>
+                <input className="form-input" type="text" value={this.state.user.custom_url} onChange={(e) => this.handleInputChange("custom_url", e)} />
               </div>
 
               <div className="form-item">
@@ -112,13 +125,11 @@ class Settings extends Component {
                 <input className="form-input" type="text" value={this.state.user.yt_embed_2} onChange={(e) => this.handleInputChange("yt_embed_2", e)} />
               </div>
             </div>
-
           <div className="form-vertical">
             <h3>Track List</h3>
             <div className="form-item">
               {this.state.uploads.map(upload => <div key={upload._id}><span>{upload.title}  </span><button onClick={(e) => this.handleTrackDelete(e, upload._id)}>DELETE</button></div>)}
             </div>
-
           </div>
         </div>
           
