@@ -87,7 +87,9 @@ footer {
 // Reusable global style classes
 
   .pageContent {
-    margin: 0 4vw;
+    margin: 0;
+    padding-left: 4vw;
+    padding-right: 4vw;
     min-width: 500px;
     background-color: black;
     padding-bottom: 150px;
@@ -274,10 +276,12 @@ footer {
     border-radius: 25px;
     display: block;
     margin: 10vh auto;
+    border: none;
   }
 
   .form-button:hover {
-    background-color: red;
+    background-color: grey;
+    color: white;
   }
 
   .signup {
@@ -377,10 +381,12 @@ footer {
   .settings-button {
     font-size: 12px;
     border-radius: 25px;
+    border: none;
   }
 
   .settings-button:hover {
     background-color: red;
+    color: white;
   }
 
   .delete-button {
@@ -390,10 +396,13 @@ footer {
     margin: 20vh auto 5vh auto;
     background-color: 'red';
     width: 25%;
+    border: none;
   }
 
   .delete-button:hover {
-    background-color: maroon;
+    background-color: red;
+    // border: white solid 2px;
+    color: yellow;
   }
 
   // LOGIN
@@ -402,6 +411,10 @@ footer {
     background-image: linear-gradient(rgba(0, 0, 0, 1) 25%, rgba(255, 255, 255, 0) 75%, rgba(0, 0, 0, 1)), url('/recordtexture3.jpg');
   }
 
+  .upload-page{
+    background-image: linear-gradient(rgba(0, 0, 0, 1) 5%, rgba(255, 255, 255, 0) 75%, rgba(0, 0, 0, 1)), url('/berlin2.png');
+    background-size: cover;
+  }
   // --------------------
   // Style for Track Component
 }
