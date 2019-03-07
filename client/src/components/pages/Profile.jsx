@@ -54,11 +54,11 @@ class Profile extends Component {
         </div>
 
         <div className="profile-bio-container">
-          
+          <p>{this.state.extendedBio}</p>
         </div>
 
         <div className="profile-container">
-          <div style={{flexGrow: '1'}}>
+          <div style={{flexGrow: '0'}}>
               {!(this.state.user.yt_embed_1 || this.state.user.yt_embed_2)
                 ?
                 <div className="profile-container-right">
