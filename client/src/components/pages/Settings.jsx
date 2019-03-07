@@ -94,7 +94,9 @@ class Settings extends Component {
                 <label className="form-label" htmlFor="bio">Bio</label> <br/>
                 <input className="form-input" id="extendedBio" type="text" value={this.state.user.extendedBio} onChange={(e) => this.handleInputChange("extendedBio", e)} />
               </div>
+            </div>
 
+            <div className="form-vertical">
               <div className="form-item">
                 <label className="form-label" htmlFor="sc_url">Soundcloud URL</label> <br/>
                 <input className="form-input" id="sc_url" type="text" value={this.state.user.sc_url} onChange={(e) => this.handleInputChange("sc_url", e)} />
@@ -125,10 +127,11 @@ class Settings extends Component {
                 <input className="form-input" type="text" value={this.state.user.yt_embed_2} onChange={(e) => this.handleInputChange("yt_embed_2", e)} />
               </div>
             </div>
+            
           <div className="form-vertical">
-            <h3>Track List</h3>
+            <h6 style={{ marginTop: '4.5vh', color: 'red' }} >Manage Tracks</h6>
             <div className="form-item">
-              {this.state.uploads.map(upload => <div key={upload._id}><span>{upload.title}  </span><button onClick={(e) => this.handleTrackDelete(e, upload._id)}>DELETE</button></div>)}
+              {this.state.uploads.map(upload => <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }} key={upload._id}><div className="settings-tracklist-item">{upload.title}</div><button className="settings-button settings-tracklist-item" onClick={(e) => this.handleTrackDelete(e, upload._id)}>DELETE</button></div>)}
             </div>
           </div>
         </div>
@@ -137,9 +140,7 @@ class Settings extends Component {
         </form>
 
         <form action="/update">
-          <div className="form-horizontal">
-            <button className="form-button" onClick={(e) => this.handleDeleteClick(e)}>Delete Account</button>
-          </div>
+          <button className="delete-button" onClick={(e) => this.handleDeleteClick(e)}>*DELETE ACCOUNT*</button>
         </form>
       </div>
     )}

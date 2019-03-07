@@ -359,7 +359,31 @@ footer {
     padding-top: 10vh;
   }
 
+  .settings-tracklist-item {
+    margin: 1vh 1vw;
+  }
 
+  .settings-button {
+    font-size: 12px;
+    border-radius: 25px;
+  }
+
+  .settings-button:hover {
+    background-color: red;
+  }
+
+  .delete-button {
+    width: 10%;
+    border-radius: 25px;
+    display: block;
+    margin: 10vh auto;
+    background-color: 'red';
+    width: 25%;
+  }
+
+  .delete-button:hover {
+    background-color: maroon;
+  }
 
   // --------------------
   // Style for Track Component
