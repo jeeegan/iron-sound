@@ -36,11 +36,6 @@ class Track extends Component {
       .catch(err => this.setState({ message: err.toString() }))
   }
 
-  componentDidUpdate() {
-    console.log("isOwner", this.state.isOwner)
-    console.log("created_by", this.state._created_by)
-  }
-
   isOwner() {
     api.userData()
       .then(res => {
@@ -87,11 +82,6 @@ class Track extends Component {
             trackinfo="track-info"
             waveform="waveform-right"
           />  
-
-        {/* <form className="form-vertical">
-          <input type="file" onChange={(e) => this.handleFileUpload(e)} /> <br />
-          <button className="form-button" onClick={(e) => this.handleClick(e)}>Upload</button>
-        </form> */}
       </div>
     );
   }
